@@ -1,4 +1,4 @@
-package com.spartaglobal.eng43project;
+package com.spartaglobal.eng43project.ProjectTests;
 
 import static org.junit.Assert.assertTrue;
 

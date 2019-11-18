@@ -2,7 +2,7 @@ package com.spartaglobal.eng43project.automationPracticeSite;
 
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Basket;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Checkout;
-import com.spartaglobal.eng43project.automationPracticeSite.Pages.HomePage;
+import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.HomePage;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Signup;
 import org.openqa.selenium.WebDriver;
 

@@ -1,2 +1,2 @@
-# Engineering 43 Final Project
+# <i>Engineering 43 Final Project</i>
 

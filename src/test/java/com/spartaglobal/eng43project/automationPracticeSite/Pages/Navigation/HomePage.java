@@ -2,12 +2,9 @@ package com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation;
 
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
-    private WebDriver driver;
-    private String homePageURL = "http://automationpractice.com/index.php";
-
+public class HomePage extends NavigationPages {
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void goToHomePageURL(){

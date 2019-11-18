@@ -1,4 +1,4 @@
-package com.spartaglobal.eng43project.automationPracticeSite.Pages;
+package com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation;
 
 import org.openqa.selenium.WebDriver;
 

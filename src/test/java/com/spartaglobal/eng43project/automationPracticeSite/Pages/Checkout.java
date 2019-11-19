@@ -13,4 +13,8 @@ public class Checkout {
     public void goToCheckoutURL(){
         driver.navigate().to(checkoutUrl);
     }
+
+
+
+
 }

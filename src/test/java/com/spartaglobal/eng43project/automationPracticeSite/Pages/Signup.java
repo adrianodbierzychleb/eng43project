@@ -1,29 +1,39 @@
 package com.spartaglobal.eng43project.automationPracticeSite.Pages;
 
+import com.spartaglobal.eng43project.SeleniumConfig.SeleniumConfig;
+import com.spartaglobal.eng43project.automationPracticeSite.AutomationPracticeSite;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+<<<<<<< HEAD
 import org.openqa.selenium.support.ui.Select;
+=======
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+>>>>>>> signUp
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Signup {
 
-    private WebDriver driver;
+    public WebDriver driver;
+ //   public WebDriverWait webDriverWait;
+
     private String signUpURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     private By emailFieldID = By.id("email_create");
     private By AccountexistsErrorID = By.id("create_account_error");
     private By createAccountButton = By.name("SubmitCreate");
-
+    private String accountFormURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation";
+    //pawels
     private By yourAddressFirstNameFieldID = By.id("firstname");
     private By yourAddressLastNameFieldID = By.id("lastname");
-    private By yourAddressCompanyFieldID = By.id("Company");
+    private By yourAddressCompanyFieldID = By.id("company");
     private By yourAddressAddress1FieldID = By.id("address1");
     private By yourAddressAddress2FieldID = By.id("address2");
     private By yourAddressCityFieldID = By.id("city");
-    private By yourAddressStateFieldID = By.id("id_state");
+   // private By yourAddressStateFieldID = By.id("id_state");
     private By yourAddressPostcodeFieldID = By.id("postcode");
     //  private By yourAddressCountrySelectFieldID = By.id("id_country");
     private By yourAddressAdditionalInformationFieldID = By.id("other");
@@ -32,8 +42,6 @@ public class Signup {
     private By yourAddressAddressAliasFieldID = By.id("alias");
     private By yourAddressRegisterButtonID = By.id("submitAccount");
 
-    private By createAccoutnEmailFieldOnSignInPage = By.id("email_create");
-    private String signUpEmail = "ccccc123@gmail1.com";
 
    //YASMINS CODE
     private By titles = By.name("id_gender");
@@ -57,13 +65,14 @@ public class Signup {
 
     public Signup(WebDriver driver) {
         this.driver = driver;
+      //  this.driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+       // webDriverWait = new WebDriverWait(driver, 10);
     }
 
     public Signup goToSignUpURL(){
         driver.navigate().to(signUpURL);
         return this;
     }
-
 
     public Signup inputEmail(String email){
         driver.findElement(emailFieldID).sendKeys(email);
@@ -72,6 +81,7 @@ public class Signup {
 
     public Signup clickCreateAccountButton(){
         driver.findElement(createAccountButton).click();
+    //    webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(yourAddressFirstNameFieldID));
         return this;
     }
 
@@ -80,10 +90,11 @@ public class Signup {
 
     }
 
-    public void enterValidEmailIntoSIgnUp(){
-        driver.findElement(createAccoutnEmailFieldOnSignInPage).sendKeys(signUpEmail);
-
+    public Signup goToCreateAccountPage(){
+        driver.navigate().to(accountFormURL);
+        return this;
     }
+
 
     public Signup inputFirstNameIntoYourAddressSection(String firstname) {
         waiting();
@@ -97,10 +108,31 @@ public class Signup {
     }
 
     public Signup inputCompanyIntoYourAddressSection(String company) {
-        driver.findElement(yourAddressFirstNameFieldID).sendKeys(company);
+        driver.findElement(yourAddressCompanyFieldID).sendKeys(company);
         return this;
     }
 
+    public Signup inputAddress1IntoYourAddressSection(String address1) {
+        driver.findElement(yourAddressAddress1FieldID).sendKeys(address1);
+        return this;
+    }
+
+    public Signup inputAddress2IntoYourAddressSection(String address2) {
+        driver.findElement(yourAddressAddress2FieldID).sendKeys(address2);
+        return this;
+    }
+
+    public Signup inputCityIntoYourAddressSection(String city) {
+        driver.findElement(yourAddressFirstNameFieldID).sendKeys(city);
+        return this;
+    }
+
+    public Signup inputPostCodeIntoYourAddressSection(String postCode) {
+        driver.findElement(yourAddressPostcodeFieldID).sendKeys(postCode);
+        return this;
+    }
+
+<<<<<<< HEAD
 //YASMIN'S CODE
 
 
@@ -189,4 +221,35 @@ public class Signup {
     }
 
 
+=======
+    public Signup inputAdditionalInfoIntoYourAddressSection(String additionalInfo) {
+        driver.findElement(yourAddressFirstNameFieldID).sendKeys(additionalInfo);
+        return this;
+    }
+
+    public Signup inputHomePhoneInfoIntoYourAddressSection(String homePhone) {
+        driver.findElement(yourAddressHomePhoneFieldID).sendKeys(homePhone);
+        return this;
+    }
+
+    public Signup inputMobilePhoneInfoIntoYourAddressSection(String mobilePhone) {
+        driver.findElement(yourAddressMobilePhoneFieldID).sendKeys(mobilePhone);
+        return this;
+    }
+
+    public Signup inputAliasInfoIntoYourAddressSection(String alias) {
+        driver.findElement(yourAddressFirstNameFieldID).sendKeys(alias);
+        return this;
+    }
+
+    public Signup pressRegisterButton() {
+        driver.findElement(yourAddressRegisterButtonID).click();
+        return this;
+    }
+
+    public void waiting(){
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+>>>>>>> signUp
 }
+

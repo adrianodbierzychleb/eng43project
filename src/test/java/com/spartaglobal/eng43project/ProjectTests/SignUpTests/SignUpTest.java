@@ -40,10 +40,17 @@ public class SignUpTest {
         site = new AutomationPracticeSite(chromeDriverConfig.getDriver());
     }
 
+<<<<<<< HEAD
    // @AfterClass
    // public static void teardown(){
       //  site.closeDriver();
 
+=======
+//    @AfterClass
+//    public static void teardown(){
+//        site.closeDriver();
+//    }
+>>>>>>> signUp
 
     @Test
     public void emailAccountExists() {
@@ -59,6 +66,7 @@ public class SignUpTest {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton();
     }
 
+<<<<<<< HEAD
     @Test
     public void testTitle () {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().getTitle();
@@ -116,4 +124,6 @@ public class SignUpTest {
 
 
 
+=======
+>>>>>>> signUp
 }

@@ -14,11 +14,8 @@ public class BasketTest {
     @BeforeClass
     public static void setup(){
         // TODO: 18/11/2019 Change the driverPath to your own path!
-<<<<<<< HEAD
         seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
-=======
-        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Dana Korang-Awua\\Downloads\\chromedriver_win32\\chromedriver.exe");
->>>>>>> development
+
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     }
 

@@ -16,16 +16,6 @@ public class SignUpTest {
 
     private static Signup signup;
 
-    @BeforeClass
-    public static void preRequesites(){
-        SeleniumConfig chromeDriverConfig = new SeleniumConfig("chrome", "C:\\Users\\Pawel Misiura\\Downloads\\chromedriver_win32\\chromedriver.exe");
-        signup = new Signup(chromeDriverConfig.getDriver());
-    }
 
-    @Test
-    public void enterLastNameInYourAddressTest() throws Exception{
-        Assert.assertEquals("Steve", signup.inputFirstNameIntoYourAddressSection("Steve"));
-
-    }
 
 }

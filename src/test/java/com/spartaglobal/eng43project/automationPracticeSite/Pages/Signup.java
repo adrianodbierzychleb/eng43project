@@ -23,12 +23,20 @@ public class Signup {
     private By yourAddressAddressAliasFieldID = By.id("alias");
     private By yourAddressRegisterButtonID = By.id("submitAccount");
 
+    private By createAccoutnEmailFieldOnSignInPage = By.id("email_create");
+    private String signUpEmail = "ccccc123@gmail1.com";
+
     public Signup(WebDriver driver) {
         this.driver = driver;
     }
 
     public void goToSignUpURL(){
         driver.navigate().to(signUpURL);
+    }
+
+    public void enterValidEmailIntoSIgnUp(){
+        driver.findElement(createAccoutnEmailFieldOnSignInPage).sendKeys(signUpEmail);
+
     }
 
     public Signup inputFirstNameIntoYourAddressSection(String firstname) {

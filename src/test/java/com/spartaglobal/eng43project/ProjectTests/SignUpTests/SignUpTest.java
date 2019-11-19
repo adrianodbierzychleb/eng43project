@@ -27,10 +27,10 @@ public class SignUpTest {
         site = new AutomationPracticeSite(chromeDriverConfig.getDriver());
     }
 
-//    @AfterClass
-//    public static void teardown(){
-//     site.closeDriver();
-//    }
+    @AfterClass
+    public static void teardown(){
+        site.closeDriver();
+    }
 
     @Test
     public void emailAccountExists() {

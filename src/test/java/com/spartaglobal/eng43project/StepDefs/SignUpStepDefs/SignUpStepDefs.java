@@ -22,8 +22,7 @@ public class SignUpStepDefs {
 
     @Given("that I am on the create account page")
     public void that_I_am_on_the_create_account_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+
     }
 
     @When("I enter a valid fn {string}")

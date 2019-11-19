@@ -9,12 +9,14 @@ import io.cucumber.java.en.When;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Bailee Beckles\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Fabio Fernandes\\Downloads\\chromedriver_win32\\chromedriver.exe");
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
     @Given("I have an account")
     public void i_have_an_account() {
         System.out.println("account working");
+        automationPracticeSite.getBasket().addItemToBasket();
+        automationPracticeSite.getBasket().proceedToCheckout();
     }
 
     @When("I attempt to change my address before the delivery")

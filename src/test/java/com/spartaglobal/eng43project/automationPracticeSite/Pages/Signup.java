@@ -8,14 +8,12 @@ import java.util.List;
 
 public class Signup {
 
-
-
-
     private WebDriver driver;
     private String signUpURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     private By emailFieldID = By.id("email_create");
     private By AccountexistsErrorID = By.id("create_account_error");
     private By createAccountButton = By.name("SubmitCreate");
+    private String accountFormURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation";
 
     private By yourAddressFirstNameFieldID = By.id("firstname");
     private By yourAddressLastNameFieldID = By.id("lastname");
@@ -44,6 +42,10 @@ public class Signup {
         return this;
     }
 
+    public Signup goToCreateAccountPage(){
+        driver.navigate().to(accountFormURL);
+        return this;
+    }
 
     public Signup inputEmail(String email){
         driver.findElement(emailFieldID).sendKeys(email);

@@ -18,8 +18,4 @@ public class HomePage {
         return this;
     }
 
-    public HomePage getNavToWomen(){
-        commonPageProperties.clickWomenButton();
-        return this;
-    }
 }

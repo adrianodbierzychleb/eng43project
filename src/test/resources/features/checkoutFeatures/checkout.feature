@@ -19,13 +19,13 @@ Feature: Checkout
     |126 Manor House| London  |
     |126 London Wall| Bristol |
 
-  #Scenario 51
-  @outline
-  Scenario Outline: If I input an incorrect phone format then I will receive an error
-        Given I have an account
-        When I attempt to change my address before the delivery
-        And I am taken to the page to change my address
-        And I change my <phone number>
+#  #Scenario 51
+#  @outline
+#  Scenario Outline: If I input an incorrect phone format then I will receive an error
+#        Given I have an account
+#        When I attempt to change my address before the delivery
+#        And I am taken to the page to change my address
+#        And I change my <phone number>
 
 
 

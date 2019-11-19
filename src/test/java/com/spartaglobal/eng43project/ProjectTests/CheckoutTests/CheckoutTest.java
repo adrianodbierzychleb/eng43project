@@ -20,6 +20,12 @@ public class CheckoutTest {
     }
 
 
+
+//    @Test
+//    public void shouldGoToCheckout() throws Exception{
+//        automationPracticeSite.getCheckout().goToCheckoutURL().login();
+//     }
+
     @Test
     public void shouldGoToCheckout() throws Exception{
         automationPracticeSite.getCheckout().goToCheckoutURL().login();
@@ -29,4 +35,5 @@ public class CheckoutTest {
     public void addItemToBasketAndCheckout(){
         automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
      }
+
 }

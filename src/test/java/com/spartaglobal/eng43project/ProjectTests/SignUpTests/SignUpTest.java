@@ -60,8 +60,36 @@ public class SignUpTest {
 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+    @Before
+    public void preRecs(){
+        SeleniumConfig chromeDriverConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
+        site = new AutomationPracticeSite(chromeDriverConfig.getDriver());
+    }
+
+//    @AfterClass
+//    public static void teardown(){
+//        site.closeDriver();
+//    }
+
+    @Test
+    public void emailAccountExists() {
+
+        Iterator<WebElement> itr = site.getSignup().goToSignUpURL().inputEmail("srehman@spartaglobal.com").clickCreateAccountButton().getEmailExistsError().iterator();
+        while(itr.hasNext()){
+            System.out.println(itr.next().getText());
+        }
+    }
+
+    @Test
+    public void signUpSuccessful (){
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton();
+    }
+>>>>>>> signUp
 
 }

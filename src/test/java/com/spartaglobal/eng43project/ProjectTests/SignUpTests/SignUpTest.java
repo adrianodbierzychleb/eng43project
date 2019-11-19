@@ -3,6 +3,7 @@ package com.spartaglobal.eng43project.ProjectTests.SignUpTests;
 import com.spartaglobal.eng43project.SeleniumConfig.SeleniumConfig;
 
 import com.spartaglobal.eng43project.automationPracticeSite.AutomationPracticeSite;
+import com.spartaglobal.eng43project.automationPracticeSite.Pages.CreateAnAccount;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,20 +28,22 @@ public class SignUpTest {
     private static ChromeDriver driver;
     private static AutomationPracticeSite site;
 
+    private static CreateAnAccount createAnAccount;
+
     private String accountExistsError = "An account using this email address has already been registered. Please enter a valid password or request a new one.";
 
 
     @Before
     public void preRecs(){
-        SeleniumConfig chromeDriverConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        SeleniumConfig chromeDriverConfig = new SeleniumConfig("chrome","C:\\Users\\Yasmin Jones\\Downloads\\chromedriver_win32\\chromedriver.exe");
 
         site = new AutomationPracticeSite(chromeDriverConfig.getDriver());
     }
 
-    @AfterClass
-    public static void teardown(){
-        site.closeDriver();
-    }
+   // @AfterClass
+   // public static void teardown(){
+      //  site.closeDriver();
+
 
     @Test
     public void emailAccountExists() {
@@ -56,9 +59,59 @@ public class SignUpTest {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton();
     }
 
+    @Test
+    public void testTitle () {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().getTitle();
 
 
-    private static Signup signup;
+    }
+
+    @Test
+    public void testInputFirstName () {
+       site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().inputFirstName("yasmin");
+
+    }
+
+    @Test
+    public void testInputLastName () {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().inputLastname("jones");
+
+    }
+
+    @Test //this doesn't work
+    public void testinputPassword () {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().inputPassword("qwert");
+    }
+
+    @Test
+    public void testCheckDays () {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().checkDayOptions();
+    }
+
+    @Test
+    public void testCheckMonths () {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().checkMonthOptions();
+    }
+
+    @Test
+    public void testCheckYears () {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").checkYearOptions();
+    }
+
+    @Test
+    public void testClickNewsletter () {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().clickNewsletter();
+    }
+
+    @Test
+    public void testClickSpecialOffer () {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().clickSpecialOffer();
+    }
+
+
+
+
+
 
 
 

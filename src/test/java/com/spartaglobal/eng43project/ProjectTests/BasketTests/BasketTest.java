@@ -15,14 +15,13 @@ public class BasketTest {
     public static void setup(){
         // TODO: 18/11/2019 Change the driverPath to your own path!
         seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
-
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     }
-
-    @AfterClass
-    public static void teardown(){
-        seleniumConfig.getDriver().close();
-    }
+//
+//    @AfterClass
+//    public static void teardown(){
+//        seleniumConfig.getDriver().close();
+//    }
 
     @Test
     public void checkUrlIsOpened(){
@@ -31,12 +30,12 @@ public class BasketTest {
     }
 
     @Test
-    public void checkCanAddItem(){
+    public void checkAddItem(){
         automationPracticeSite.getBasket().addItemToBasket();
     }
 
     @Test
     public void checkProceedToCheckout(){
-        automationPracticeSite.getBasket().proceedToCheckout();
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
     }
 }

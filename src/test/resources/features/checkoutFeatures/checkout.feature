@@ -9,9 +9,14 @@ Feature: Checkout
         Given I have an account
         When I attempt to change my address before the delivery
         And I am taken to the page to change my address
-        And I change my <address>
+        And I change my "<address>"
+        And I change my "<city>"
         Then My delivery address should update
 
     Examples:
-    |address        |
-    |126 Manor House|
+    |address        | city    |
+    |126 Manor House| London  |
+    |126 London Wall| Bristol |
+
+
+    

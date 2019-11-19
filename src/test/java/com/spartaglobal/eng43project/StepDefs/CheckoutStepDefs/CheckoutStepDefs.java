@@ -30,8 +30,8 @@ public class CheckoutStepDefs {
         throw new cucumber.api.PendingException();
     }
 
-    @And("I change my {int} London wall")
-    public void i_change_my_London_wall(Integer int1) {
+    @And("I change my {string}")
+    public void i_change_my(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }

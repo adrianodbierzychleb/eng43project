@@ -15,8 +15,7 @@ public class CheckoutStepDefs {
     @Given("I have an account")
     public void i_have_an_account() {
         System.out.println("account working");
-        automationPracticeSite.getBasket().addItemToBasket();
-        automationPracticeSite.getBasket().proceedToCheckout();
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
     }
 
     @When("I attempt to change my address before the delivery")

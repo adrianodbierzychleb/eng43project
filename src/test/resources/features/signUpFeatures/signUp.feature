@@ -13,7 +13,7 @@ Feature: As a user, I want to be able to access the create account page
     And I enter a valid post code
     And select a country
     And I enter additional information
-    And I enter a valid hp home phone
+    And I enter a valid home phone
     And I enter a valid mobile phone
     And I enter an address alias
     Then I can click register to create my account

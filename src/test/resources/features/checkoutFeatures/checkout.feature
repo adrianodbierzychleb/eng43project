@@ -13,7 +13,8 @@ Feature: Checkout
         Then My delivery address should update
 
     Examples:
-
+    |address          |
+    |126 London wall|
 
 
 

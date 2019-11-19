@@ -28,13 +28,13 @@ public class Basket {
     public Basket addItemToBasket(){
         navigationPages.homePage().goToHomePageURL();
         driver.findElement(printedDressQuickBuy).click();
-        driver.findElement(proceedToBasketButton).click();
+        driver.navigate().to(basketUrl);
         return this;
     }
 
     public Basket proceedToCheckout(){
         driver.navigate().to(basketUrl);
-        driver.findElement(By.className("button btn btn-default standard-checkout button-medium")).click();
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/p[2]/a[1]/span")).click();
         return this;
     }
 

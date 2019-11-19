@@ -26,6 +26,7 @@ public class BasketTest {
     @Test
     public void checkUrlIsOpened(){
         automationPracticeSite.getBasket().goToBasketURL();
+        automationPracticeSite.getBasket().addItemToBasket().goToBasketURL().proceedToCheckout();
         Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
     }
 }

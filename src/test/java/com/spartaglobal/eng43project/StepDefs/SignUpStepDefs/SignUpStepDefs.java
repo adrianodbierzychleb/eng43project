@@ -10,58 +10,58 @@ import org.openqa.selenium.WebDriver;
 public class SignUpStepDefs {
 
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
-    private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
+   // private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
+  //  private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
-    private static WebDriver driver;
-    private static SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Pawel Misiura\\Downloads\\chromedriver_win32\\chromedriver.exe");
-    private static AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
-    private static Signup signup;
+    public static WebDriver driver;
+    public static SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Pawel Misiura\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    public static AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
+    public static Signup signup;
+
 
     @Before
     public static void setup(){
+        automationPracticeSite.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton();
         signup = new Signup(driver);
-        automationPracticeSite.getSignup().goToSignUpURL();
-
     }
 
     @Given("that I am on the create account page")
     public void that_I_am_on_the_create_account_page() {
-
+        signup.inputFirstNameIntoYourAddressSection("steve");
     }
 
-    @When("I enter a valid fn {string}")
-    public void i_enter_a_valid_fn(String string) {
+    @When("I enter a valid first name")
+    public void i_enter_a_valid_first_name() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter a valid ln {string}")
-    public void i_enter_a_valid_ln(String string) {
+    @When("I enter a valid last name")
+    public void i_enter_a_valid_last_name() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter a valid cpny {string}")
-    public void i_enter_a_valid_cpny(String string) {
+    @When("I enter a valid company")
+    public void i_enter_a_valid_company() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter a valid a {string}")
-    public void i_enter_a_valid_a(String string) {
+    @When("I enter a valid first address")
+    public void i_enter_a_valid_first_address() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter a valid b {string}")
-    public void i_enter_a_valid_b(String string) {
+    @When("I enter a valid second address")
+    public void i_enter_a_valid_second_address() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter a valid cty {string}")
-    public void i_enter_a_valid_cty(String string) {
+    @When("I enter a valid city")
+    public void i_enter_a_valid_city() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
@@ -72,8 +72,8 @@ public class SignUpStepDefs {
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter a valid pc {string}")
-    public void i_enter_a_valid_pc(String string) {
+    @When("I enter a valid post code")
+    public void i_enter_a_valid_post_code() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
@@ -84,26 +84,26 @@ public class SignUpStepDefs {
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter ai {string}")
-    public void i_enter_ai(String string) {
+    @When("I enter additional information")
+    public void i_enter_additional_information() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter a valid hp {string}")
-    public void i_enter_a_valid_hp(String string) {
+    @When("I enter a valid hp home phone")
+    public void i_enter_a_valid_hp_home_phone() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter a valid mp {string}")
-    public void i_enter_a_valid_mp(String string) {
+    @When("I enter a valid mobile phone")
+    public void i_enter_a_valid_mobile_phone() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("I enter an aa {string}")
-    public void i_enter_an_aa(String string) {
+    @When("I enter an address alias")
+    public void i_enter_an_address_alias() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
@@ -113,7 +113,5 @@ public class SignUpStepDefs {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
-
-
 
 }

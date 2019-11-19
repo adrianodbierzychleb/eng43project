@@ -3,17 +3,17 @@ Feature: As a user, I want to be able to access the create account page
 
   Scenario: I can fill in the your address section on the create an account page.
   Given that I am on the create account page
-    When I enter a valid fn "firstName"
-    And I enter a valid ln "lastName"
-    And I enter a valid cpny "company"
-    And I enter a valid a "addressa"
-    And I enter a valid b "addressb"
-    And I enter a valid cty "city"
+    When I enter a valid first name
+    And I enter a valid last name
+    And I enter a valid company
+    And I enter a valid first address
+    And I enter a valid second address
+    And I enter a valid city
     And select a state
-    And I enter a valid pc "postalCode"
+    And I enter a valid post code
     And select a country
-    And I enter ai "additionalInformation"
-    And I enter a valid hp "homePhone"
-    And I enter a valid mp "mobilePhone"
-    And I enter an aa "addressAlias"
+    And I enter additional information
+    And I enter a valid hp home phone
+    And I enter a valid mobile phone
+    And I enter an address alias
     Then I can click register to create my account

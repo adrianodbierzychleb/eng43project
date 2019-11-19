@@ -1,14 +1,21 @@
 package com.spartaglobal.eng43project.automationPracticeSite.Pages;
 
+import com.spartaglobal.eng43project.SeleniumConfig.SeleniumConfig;
+import com.spartaglobal.eng43project.automationPracticeSite.AutomationPracticeSite;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Signup {
 
-    private WebDriver driver;
+    public static WebDriver driver;
+    public WebDriverWait webDriverWait;
+
     private String signUpURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     private By emailFieldID = By.id("email_create");
     private By AccountexistsErrorID = By.id("create_account_error");
@@ -29,11 +36,11 @@ public class Signup {
     private By yourAddressAddressAliasFieldID = By.id("alias");
     private By yourAddressRegisterButtonID = By.id("submitAccount");
 
-    private By createAccoutnEmailFieldOnSignInPage = By.id("email_create");
-    private String signUpEmail = "ccccc123@gmail1.com";
 
     public Signup(WebDriver driver) {
         this.driver = driver;
+        this.driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+        webDriverWait = new WebDriverWait(driver, 10);
     }
 
     public Signup goToSignUpURL(){
@@ -49,6 +56,7 @@ public class Signup {
 
     public Signup clickCreateAccountButton(){
         driver.findElement(createAccountButton).click();
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(yourAddressFirstNameFieldID));
         return this;
     }
 
@@ -57,12 +65,8 @@ public class Signup {
 
     }
 
-    public void enterValidEmailIntoSIgnUp(){
-        driver.findElement(createAccoutnEmailFieldOnSignInPage).sendKeys(signUpEmail);
-
-    }
-
     public Signup inputFirstNameIntoYourAddressSection(String firstname) {
+
         driver.findElement(yourAddressFirstNameFieldID).sendKeys(firstname);
         return this;
     }

@@ -8,6 +8,9 @@ import java.util.List;
 
 public class Signup {
 
+
+
+
     private WebDriver driver;
     private String signUpURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     private By emailFieldID = By.id("email_create");
@@ -76,4 +79,6 @@ public class Signup {
         driver.findElement(yourAddressFirstNameFieldID).sendKeys(company);
         return this;
     }
+
+
 }

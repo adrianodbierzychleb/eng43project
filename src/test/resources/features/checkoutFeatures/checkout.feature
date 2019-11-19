@@ -19,6 +19,6 @@ Feature: Checkout
     |126 Manor House| London  |
     |126 London Wall| Bristol |
 
-    
+
 
     

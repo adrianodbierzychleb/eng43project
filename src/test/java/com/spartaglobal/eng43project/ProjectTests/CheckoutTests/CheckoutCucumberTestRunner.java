@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin={"pretty", "html:reports/report.html"},
         tags = {""},
-        features = "classpath:features",
+        features = "classpath:features/checkoutFeatures",
         glue = "com.spartaglobal.eng43project.StepDefs.CheckoutStepDefs"
 )
 

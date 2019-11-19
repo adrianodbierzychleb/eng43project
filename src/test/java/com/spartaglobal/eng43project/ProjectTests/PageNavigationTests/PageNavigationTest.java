@@ -20,7 +20,7 @@ public class PageNavigationTest {
     @BeforeClass
     public static void setup(){
         // TODO: 18/11/2019 Change the driverPath to your own path!
-        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\IYotova\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        seleniumConfig = new SeleniumConfig("chrome","T:\\Kieran Cornish\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     }
 
@@ -33,6 +33,15 @@ public class PageNavigationTest {
     public void checkUrlIsOpened(){
         automationPracticeSite.getNavigationPages().womensPage().goToWomensPage();
         Assert.assertEquals("http://automationpractice.com/index.php?id_category=3&controller=category",seleniumConfig.getDriver().getCurrentUrl());
+    }
+    @Test
+    public void checkHomeUrl(){
+        automationPracticeSite.getNavigationPages().homePage().goToHomePageURL();
+    }
+
+    @Test
+    public void test(){
+        automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().navToWomenPage();
     }
 
 

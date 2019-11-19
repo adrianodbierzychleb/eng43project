@@ -1,6 +1,6 @@
 package com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation;
 
-import javafx.beans.value.WritableObjectValue;
+
 import org.openqa.selenium.WebDriver;
 
 public class NavigationPages {

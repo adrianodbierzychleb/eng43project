@@ -13,10 +13,12 @@ Feature: Checkout
         And I change my "<city>"
         Then My delivery address should update
 
+
     Examples:
     |address        | city    |
     |126 Manor House| London  |
     |126 London Wall| Bristol |
 
+    
 
     

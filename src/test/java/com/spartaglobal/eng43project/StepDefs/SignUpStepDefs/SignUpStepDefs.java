@@ -8,6 +8,11 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 
 public class SignUpStepDefs {
+
+    // TODO: 18/11/2019  Change your driver path to your own path!
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
+
     private static WebDriver driver;
     private static SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Pawel Misiura\\Downloads\\chromedriver_win32\\chromedriver.exe");
     private static AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());

@@ -5,6 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class MyAccount {
 
+    private By singInButton = By.className("login");
+    private By emailTextBox = By.id("email");
+    private By passwordTextBox = By.id("passwd");
+    private By submitLoginButton = By.id("SubmitLogin");
+
     private WebDriver driver;
     private String homepage = "http://automationpractice.com/index.php";
 
@@ -13,13 +18,18 @@ public class MyAccount {
     }
 
     public void goToHomepage(){
-
         driver.navigate().to(homepage);
     }
 
-    public MyAccount goToSignIn(){
+    public MyAccount logIntoAccount(){
+        driver.findElement(singInButton).click();
+        driver.findElement(emailTextBox).sendKeys("eng43@test.com");
+        driver.findElement(passwordTextBox).sendKeys("spartaglobal");
+        driver.findElement(submitLoginButton).click();
         return this;
     }
+
+
 
 
 

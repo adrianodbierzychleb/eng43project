@@ -13,7 +13,7 @@ public class MyAccountTests {
 
     @Before
     public void setup(){
-        SeleniumConfig seleniumConfig = new SeleniumConfig("chrome", "C:\\\\Users\\\\Adrian Odbierzychleb\\\\Downloads\\\\chromedriver.exe");
+        SeleniumConfig seleniumConfig = new SeleniumConfig("chrome", "C:\\\\Users\\\\Fabio Fernandes\\\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     }
 

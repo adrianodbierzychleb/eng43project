@@ -34,6 +34,6 @@ public class BasketTest {
 
     @Test
     public void checkProceedToCheckout(){
-        automationPracticeSite.getBasket().proceedToCheckout();
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
     }
 }

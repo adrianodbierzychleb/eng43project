@@ -44,7 +44,7 @@ public class Basket {
     }
 
     public Basket proceedToCheckout(){
-        addItemToBasket().waitForElement();
+        waitForElement();
         driver.findElement(By.linkText("Proceed to checkout")).click();
         return this;
     }

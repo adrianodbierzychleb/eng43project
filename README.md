@@ -1,6 +1,6 @@
 # <i>Engineering 43 Final Project</i>
 
-For out week 10 we have been asigned the task to create a project. In order to complete the project we ahve to apply all the knowledge we have gain up until this point.
+For our week 10 we have been asigned the task to create a project. In order to complete the project we have to apply all the knowledge we have gain up until this point.
 The goal of the project is to test the website:
 Selenium <b><a href= http://automationpractice.com/index.php>Automation Practice</a></b> which allows to practice testing skills.
 

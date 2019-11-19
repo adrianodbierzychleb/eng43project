@@ -21,4 +21,3 @@ Feature: Checkout
 
     
 
-    

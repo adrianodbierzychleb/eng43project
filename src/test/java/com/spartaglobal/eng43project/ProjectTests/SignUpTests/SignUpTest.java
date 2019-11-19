@@ -39,7 +39,7 @@ public class SignUpTest {
 
     @AfterClass
     public static void teardown(){
-        site.closeDriver();
+        driver.close();
     }
 
     @Test

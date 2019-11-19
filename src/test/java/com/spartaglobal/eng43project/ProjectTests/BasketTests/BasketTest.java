@@ -24,22 +24,36 @@ public class BasketTest {
     @BeforeClass
     public static void setup(){
         // TODO: 18/11/2019 Change the driverPath to your own path!
+<<<<<<< HEAD
         seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Anis Subba\\Downloads\\chromedriver_win32\\chromedriver.exe");
+=======
+        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
+>>>>>>> basket
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navigationPages = new NavigationPages(seleniumConfig.getDriver());
     }
 
+<<<<<<< HEAD
     /*@AfterClass
     public static void teardown(){
         seleniumConfig.getDriver().close();
     }*/
+=======
+//    @AfterClass
+//    public static void teardown(){
+//        seleniumConfig.getDriver().close();
+//    }
+>>>>>>> basket
 
     @Test
     public void checkUrlIsOpened(){
         automationPracticeSite.getBasket().goToBasketURL();
+        automationPracticeSite.getBasket().addItemToBasket().goToBasketURL().proceedToCheckout();
         Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
     }
 
+<<<<<<< HEAD
     /*Given I am in Woman Catalog page
     When I have added multiple products using the quick view functionality to the cart
     Then I can process to payment by pressing the checkout button*/
@@ -51,5 +65,11 @@ public class BasketTest {
     @Test
     public void addMultipleItemInCart(){
         automationPracticeSite.getBasket().processToCheckout();
+=======
+
+    @Test
+    public void checkProceedToCheckout(){
+        automationPracticeSite.getBasket().proceedToCheckout();
+>>>>>>> basket
     }
 }

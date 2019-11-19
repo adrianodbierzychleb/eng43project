@@ -19,4 +19,3 @@ Feature: Checkout
     |126 London Wall| Bristol |
 
 
-    

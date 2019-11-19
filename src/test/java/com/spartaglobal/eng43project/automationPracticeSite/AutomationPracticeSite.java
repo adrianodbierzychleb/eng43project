@@ -39,5 +39,10 @@ public class AutomationPracticeSite {
         return signup;
     }
 
+    public AutomationPracticeSite closeDriver(){
+        driver.close();
+        return this;
+    }
+
 
 }

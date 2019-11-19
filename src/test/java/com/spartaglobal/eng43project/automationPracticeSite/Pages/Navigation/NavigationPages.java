@@ -1,9 +1,5 @@
 package com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation;
-<<<<<<< HEAD
 
-
-=======
->>>>>>> navigation
 import org.openqa.selenium.WebDriver;
 
 public class NavigationPages {

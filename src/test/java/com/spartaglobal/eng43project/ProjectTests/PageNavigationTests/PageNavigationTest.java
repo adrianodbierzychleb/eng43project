@@ -36,8 +36,9 @@ public class PageNavigationTest {
     }
 
     @Test
-    public void shouldOpenHome() throws Exception{
-        automationPracticeSite.getNavigationPages().homePage().goToHomePageURL();
+    public void shouldClickWomenLink() throws Exception{
+        automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().getNavToWomen();
+        Assert.assertEquals("http://automationpractice.com/index.php?id_category=3&controller=category",seleniumConfig.getDriver().getCurrentUrl());
     }
 
 

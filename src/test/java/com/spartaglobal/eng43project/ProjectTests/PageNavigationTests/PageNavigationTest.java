@@ -35,5 +35,11 @@ public class PageNavigationTest {
         Assert.assertEquals("http://automationpractice.com/index.php?id_category=3&controller=category",seleniumConfig.getDriver().getCurrentUrl());
     }
 
+    @Test
+    public void shouldClickWomenLink() throws Exception{
+        automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().getNavToWomen();
+        Assert.assertEquals("http://automationpractice.com/index.php?id_category=3&controller=category",seleniumConfig.getDriver().getCurrentUrl());
+    }
+
 
 }

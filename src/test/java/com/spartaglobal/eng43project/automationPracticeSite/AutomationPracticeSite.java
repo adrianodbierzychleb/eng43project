@@ -2,6 +2,7 @@ package com.spartaglobal.eng43project.automationPracticeSite;
 
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Basket;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Checkout;
+import com.spartaglobal.eng43project.automationPracticeSite.Pages.MyAccount;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.HomePage;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.NavigationPages;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Signup;
@@ -14,6 +15,7 @@ public class AutomationPracticeSite {
     private Checkout checkout;
     private NavigationPages navigationPages;
     private Signup signup;
+    private MyAccount myAccount;
 
     public AutomationPracticeSite(WebDriver driver) {
         this.driver = driver;
@@ -21,6 +23,7 @@ public class AutomationPracticeSite {
         this.checkout = new Checkout(driver);
         this.navigationPages = new NavigationPages(driver);
         this.signup = new Signup(driver);
+        this.myAccount = new MyAccount(driver);
     }
 
     public Basket getBasket() {
@@ -37,6 +40,10 @@ public class AutomationPracticeSite {
 
     public Signup getSignup() {
         return signup;
+    }
+
+    public MyAccount getMyAccount(){
+        return myAccount;
     }
 
 

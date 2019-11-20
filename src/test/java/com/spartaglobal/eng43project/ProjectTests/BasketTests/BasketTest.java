@@ -26,16 +26,6 @@ public class BasketTest {
         seleniumConfig.getDriver().close();
     }*/
 
-    /*@Test
-    public void checkUrlIsOpened(){
-        automationPracticeSite.getBasket().goToBasketURL();
-        automationPracticeSite.getBasket().addItemToBasket().goToBasketURL().proceedToCheckout();
-        Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
-    }*/
-
-    /*Given I am in Woman Catalog page
-    When I have added multiple products using the quick view functionality to the cart
-    Then I can process to payment by pressing the checkout button*/
     @Test
     public void goToWomanHomePage(){
         navigationPages.womensPage().goToWomensPage();
@@ -45,11 +35,6 @@ public class BasketTest {
     public void addMultipleItemInCart() {
         automationPracticeSite.getBasket().proceedToCheckout();
     }
-
- /*   @Test
-    public void checkProceedToCheckout(){
-        automationPracticeSite.getBasket().proceedToCheckout();
-    }*/
 
     @Test
     public void addMulitpleProductToCheckout(){

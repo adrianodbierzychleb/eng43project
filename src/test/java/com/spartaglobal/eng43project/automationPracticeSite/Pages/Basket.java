@@ -15,9 +15,7 @@ public class Basket {
     private WebDriver driver;
     private NavigationPages navigationPages;
     private String basketUrl = "http://automationpractice.com/index.php?controller=order";
-    private By checkoutButtonID = By.linkText("Proceed to checkout");
-    private By continueToShoppingID = By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span");
-    private By printedDressQuickBuy = By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.last-item-of-tablet-line.first-item-of-mobile-line > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default > span");
+//    private By printedDressQuickBuy = By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.last-item-of-tablet-line.first-item-of-mobile-line > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default > span");
 
     public Basket(WebDriver driver) {
         this.driver = driver;
@@ -37,47 +35,40 @@ public class Basket {
 
     public Basket clickShoppingButton(){
         waitForElement();
-        driver.findElement(continueToShoppingID).click();
-        return this;
-    }
-
-    public Basket processToCheckout() {
+        driver.findElement(By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span")).click();
         waitForElement();
-        driver.findElement(checkoutButtonID).click();
         return this;
     }
 
-    public Basket goToHomePageURL(){
+/*    public Basket goToHomePageURL(){
         navigationPages.homePage().goToHomePageURL();
         return this;
-    }
+    }*/
 
     public Basket waitForElement(){
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         return this;
     }
 
-    public Basket addItemToBasket(){
+ /*   public Basket addItemToBasket(){
         goToHomePageURL();
         driver.findElement(printedDressQuickBuy).click();
         return this;
-    }
+    }*/
 
     public Basket proceedToCheckout(){
-        addItemToBasket().waitForElement();
+        waitForElement();
         driver.findElement(By.linkText("Proceed to checkout")).click();
         return this;
     }
 
     public Basket selectMultipleProductToCart(){
         WebElement from;
-        goToWomanPage();
-        Actions action = new Actions(driver);
         for (int i = 1; i < 8; i++ ){
-            from = driver.findElement(By.cssSelector("#center_column > ul > li:nth-child("+i+") > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default"));
+            from = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/div[2]/a[1]"));
             from.click();
             if( i == 7 ){
-                processToCheckout();
+                proceedToCheckout();
             }
             else {
                 clickShoppingButton();
@@ -85,4 +76,10 @@ public class Basket {
         }
         return this;
     }
+
+/*    public Basket increaseTheQuantityOfProduct(){
+        
+        return this;
+    }*/
+
 }

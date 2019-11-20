@@ -1,0 +1,23 @@
+Feature: Basket
+  As a user I want to be able to add and remove items from the basket and view the total I would have to pay
+  so I can easily purchase the right items
+
+  Scenario: As a user I want to select an item and write down the
+            quantity instead of clicking multiple times so that I save time.
+    Given I am at the summary page
+    When I select an item
+    And write down the quantity of items I want
+    Then the amount typed by me will correspond to the quantity of items bought
+
+  Scenario: As a user I want to see the tax and delivery costs I have to
+            pay additionally so that I know how much more I have to pay.
+    Given I am at the summary page
+    When I finish selecting items
+    Then the tax and delivery costs will be displayed correctly
+
+  Scenario: As a user I want to see the original price of the
+            discounted items so that I know the difference.
+    Given I am at the summary page
+    When I finish selecting items
+    Then the discounted price of the items will be displayed correctly.
+

@@ -24,8 +24,8 @@ public class BasketTest {
     @BeforeClass
     public static void setup(){
         // TODO: 18/11/2019 Change the driverPath to your own path!
-        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Anis Subba\\Downloads\\chromedriver_win32\\chromedriver.exe");
-//        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
+//        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Anis Subba\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navigationPages = new NavigationPages(seleniumConfig.getDriver());
     }
@@ -37,8 +37,6 @@ public class BasketTest {
 
     @Test
     public void checkUrlIsOpened(){
-        automationPracticeSite.getBasket().goToBasketURL();
-        automationPracticeSite.getBasket().addItemToBasket().goToBasketURL().proceedToCheckout();
         Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
     }
 
@@ -64,5 +62,10 @@ public class BasketTest {
     @Test
     public void addMulitpleProductToCheckout(){
         automationPracticeSite.getBasket().selectMultipleProductToCart();
+    }
+
+    @Test
+    public void checkCartMenu(){
+        automationPracticeSite.getBasket().goToHomePageURL().waitForElement().moveToCartMenu();
     }
 }

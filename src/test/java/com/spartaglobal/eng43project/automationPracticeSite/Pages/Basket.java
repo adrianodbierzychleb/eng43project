@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Basket {
     private WebDriver driver;
+    private Actions actions = new Actions(driver);
     private NavigationPages navigationPages;
     private String basketUrl = "http://automationpractice.com/index.php?controller=order";
     private By checkoutButtonID = By.linkText("Proceed to checkout");
@@ -37,7 +38,7 @@ public class Basket {
 
     public Basket clickShoppingButton(){
         waitForElement();
-        driver.findElement(continueToShoppingID).click();
+        driver.findElement(By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span")).click();
         return this;
     }
 
@@ -75,17 +76,9 @@ public class Basket {
         return this;
     }
 
-    public Basket checkTax(){
-        waitForElement();
-        WebElement tax = driver.findElement(By.id("total_tax"));
-        System.out.println(tax.getText());
-        return this;
-    }
-
     public Basket selectMultipleProductToCart(){
         WebElement from;
         goToWomanPage();
-        Actions action = new Actions(driver);
         for (int i = 1; i < 8; i++ ){
             from = driver.findElement(By.cssSelector("#center_column > ul > li:nth-child("+i+") > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default"));
             from.click();
@@ -96,6 +89,12 @@ public class Basket {
                 clickShoppingButton();
             }
         }
+        return this;
+    }
+
+    public Basket moveToCartMenu(){
+        goToHomePageURL();
+        actions.moveToElement(driver.findElement(By.linkText("View my shopping cart"))).perform();
         return this;
     }
 }

@@ -73,7 +73,7 @@ Feature: Checkout
 
 
 
-              Scenario: If I want to update my delivery address I will be able to do so
+              Scenario: If I want to update my city and address in Billing address
             Given I am at the address page in the checkout
             When I press the change billing address button
             And I change my address with "<address>"

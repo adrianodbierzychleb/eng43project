@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Fabio Fernandes\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\BB\\chromedriver_win32\\chromedriver.exe");
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
     /**
@@ -144,5 +144,23 @@ public class CheckoutStepDefs {
 
     @Then("I should be able to select a new address")
     public void iShouldBeAbleToSelectANewAddress() {
+    }
+
+    /**
+    * Scenario : I want to be able to change my billing address
+     */
+
+
+
+    @When("I press the change billing address button")
+    public void iPressTheChangeBillingAddressButton() {
+
+        automationPracticeSite.getCheckout().clickBillingUpdateButton();
+    }
+
+    @Then("I should be able to alter my billing address")
+    public void iShouldBeAbleToAlterMyBillingAddress() {
+        String currentUrl = seleniumConfig.getDriver().getCurrentUrl();
+        Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=237923",currentUrl);
     }
 }

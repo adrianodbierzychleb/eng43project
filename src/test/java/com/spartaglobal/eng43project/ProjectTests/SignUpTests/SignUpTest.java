@@ -34,96 +34,89 @@ public class SignUpTest {
 
 
     @Before
-    public void preRecs(){
-        SeleniumConfig chromeDriverConfig = new SeleniumConfig("chrome","C:\\Users\\Yasmin Jones\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    public void preRecs() {
+        SeleniumConfig chromeDriverConfig = new SeleniumConfig("chrome", "C:\\Users\\Yasmin Jones\\Downloads\\chromedriver_win32\\chromedriver.exe");
 
         site = new AutomationPracticeSite(chromeDriverConfig.getDriver());
     }
 
-<<<<<<< HEAD
-   // @AfterClass
-   // public static void teardown(){
-      //  site.closeDriver();
 
-=======
-//    @AfterClass
-//    public static void teardown(){
-//        site.closeDriver();
-//    }
->>>>>>> signUp
+
 
     @Test
+
     public void emailAccountExists() {
 
         Iterator<WebElement> itr = site.getSignup().goToSignUpURL().inputEmail("srehman@spartaglobal.com").clickCreateAccountButton().getEmailExistsError().iterator();
-        while(itr.hasNext()){
+        while (itr.hasNext()) {
             System.out.println(itr.next().getText());
         }
     }
 
     @Test
-    public void signUpSuccessful (){
+    public void signUpSuccessful() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton();
     }
 
-<<<<<<< HEAD
+
+
     @Test
-    public void testTitle () {
+    public void testTitle() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().getTitle();
 
 
     }
 
     @Test
-    public void testInputFirstName () {
-       site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().inputFirstName("yasmin");
+    public void testInputFirstName() {
+        site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().inputFirstName("yasmin");
 
     }
 
     @Test
-    public void testInputLastName () {
+    public void testInputLastName() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().inputLastname("jones");
 
     }
 
     @Test //this doesn't work
-    public void testinputPassword () {
+    public void testinputPassword() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().inputPassword("qwert");
     }
 
     @Test
-    public void testCheckDays () {
+    public void testCheckDays() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().checkDayOptions();
     }
 
     @Test
-    public void testCheckMonths () {
+    public void testCheckMonths() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().checkMonthOptions();
     }
 
     @Test
-    public void testCheckYears () {
+    public void testCheckYears() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").checkYearOptions();
     }
 
     @Test
-    public void testClickNewsletter () {
+    public void testClickNewsletter() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().clickNewsletter();
     }
 
     @Test
-    public void testClickSpecialOffer () {
+    public void testClickSpecialOffer() {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton().clickSpecialOffer();
     }
 
-
-
-
-
-
-
-
-
-=======
->>>>>>> signUp
 }
+
+
+
+
+
+
+
+
+
+

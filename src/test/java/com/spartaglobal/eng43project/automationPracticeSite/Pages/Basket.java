@@ -32,6 +32,7 @@ public class Basket {
     public Basket proceedToCheckout(){
         driver.navigate().to(basketUrl);
         driver.findElement(proceedToCheckoutButton).click();
+        return this;
     }
 
 }

@@ -6,12 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-<<<<<<< HEAD
+
 import org.openqa.selenium.support.ui.Select;
-=======
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
->>>>>>> signUp
+
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -132,13 +129,8 @@ public class Signup {
         return this;
     }
 
-<<<<<<< HEAD
 //YASMIN'S CODE
 
-
-    public void goToCreateAccountPage(){
-        driver.navigate().to(createAccountURL);
-    }
 
     public void getTitle () {
         waiting();
@@ -216,12 +208,7 @@ public class Signup {
     }
 
 
-    public void waiting () {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-    }
 
-
-=======
     public Signup inputAdditionalInfoIntoYourAddressSection(String additionalInfo) {
         driver.findElement(yourAddressFirstNameFieldID).sendKeys(additionalInfo);
         return this;
@@ -250,6 +237,6 @@ public class Signup {
     public void waiting(){
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
->>>>>>> signUp
+
 }
 

@@ -48,7 +48,8 @@ public class BasketTest {
 //        automationPracticeSite.getBasket().goToBasketURL();
 //        Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
 //    }
-
+//hi this is an edit
+    
     @Test
     public void goToDressSite() {
         automationPracticeSite.getBasket().goToProceedToCheckout().getQuantity("10");

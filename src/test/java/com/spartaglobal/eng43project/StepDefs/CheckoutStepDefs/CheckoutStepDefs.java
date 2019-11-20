@@ -6,10 +6,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\BB\\chromedriver_win32\\chromedriver.exe");
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Fabio Fernandes\\Downloads\\chromedriver_win32\\chromedriver.exe");
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
     @Given("I have an account")
@@ -70,26 +71,32 @@ public class CheckoutStepDefs {
 
     @Given("I have added an item to the basket")
     public void iHaveAddedAnItemToTheBasket() {
+        automationPracticeSite.getBasket().addItemToBasket();
     }
 
     @And("I go to the basket via the checkout button")
     public void iGoToTheBasketViaTheCheckoutButton() {
+        automationPracticeSite.getBasket().proceedToCheckout();
     }
 
     @And("I press the proceed to checkout button in the summary")
     public void iPressTheProceedToCheckoutButtonInTheSummary() {
+        automationPracticeSite.getBasket().proceedToSummary();
     }
 
     @And("I am not signed in")
     public void iAmNotSignedIn() {
+        System.out.println("not signed in");
     }
 
     @When("I input my username password")
     public void iInputMyUsernamePassword() {
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
     }
 
     @Then("I will be redirected  to the address form")
     public void iWillBeRedirectedToTheAddressForm() {
+        System.out.println("shit worked");
     }
 
     @And("I do not own an account")

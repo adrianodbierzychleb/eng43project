@@ -13,14 +13,20 @@ public class CheckoutStepDefs {
     private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Fabio Fernandes\\Downloads\\chromedriver_win32\\chromedriver.exe");
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
-    @Given("I have an account")
-    public void i_have_an_account() {
-        System.out.println("account working");
+    /**
+     *   Scenario Outline: If I want to update my delivery address I will be able to do so
+     */
+
+    @Given("I am at the address page in the checkout")
+    public void i_am_at_the_address_page_in_the_checkout() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
     }
 
-    @When("I attempt to change my address before the delivery")
-    public void i_attempt_to_change_my_address_before_the_delivery() {
-        System.out.println("Attempt to change delivery address");
+    @When("I click the update address button")
+    public void i_click_the_update_address_button() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
     }
 
     @And("I am taken to the page to change my address")
@@ -33,8 +39,12 @@ public class CheckoutStepDefs {
         System.out.println("ability to change the address");
     }
 
-    // part of phone number scenario
-    @And("I change my {int}")
+    /**
+     *   Scenario Outline: If I input an incorrect phone format then I will receive an error
+     * @param int1
+     */
+
+    @And("I change my {int} with an incorrect format")
     public void i_change_my(Integer int1) {
         System.out.println("the number will be changed ");
     }
@@ -49,25 +59,10 @@ public class CheckoutStepDefs {
     public void iReceiveAnErrorMessage() {
     }
 
-    // removing an item scenario additions 
 
-    @And("I want to pay for my order")
-    public void iWantToPayForMyOrder() {
-    }
-
-    @When("I proceed to go to the summary page")
-    public void iProceedToGoToTheSummaryPage() {
-    }
-
-    @And("I want to remove an item before paying")
-    public void iWantToRemoveAnItemBeforePaying() {
-    }
-
-    @Then("The item should be removed from the basket")
-    public void theItemShouldBeRemovedFromTheBasket() {
-    }
-
-    // log in once proceeding to the checkout 
+    /**
+     *       Scenario: As a user I want to be able to log in so that I can proceed to checkout
+     */
 
     @Given("I have added an item to the basket")
     public void iHaveAddedAnItemToTheBasket() {
@@ -96,8 +91,12 @@ public class CheckoutStepDefs {
 
     @Then("I will be redirected  to the address form")
     public void iWillBeRedirectedToTheAddressForm() {
-        System.out.println("shit worked");
+        System.out.println("Address form link");
     }
+
+    /**
+     *         Scenario: As a user I want to be able to sign up in order to proceed with the order
+     */
 
     @And("I do not own an account")
     public void iDoNotOwnAnAccount() {

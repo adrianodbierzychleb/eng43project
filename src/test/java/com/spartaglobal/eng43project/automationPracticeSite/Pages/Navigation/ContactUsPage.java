@@ -16,9 +16,15 @@ public class ContactUsPage {
     private By attachFilebutton = By.id("fileUpload");
     private By messagearea = By.id("message");
     private By submitbutton = By.id("submitMessage");
+    private By errormessageID = By.cssSelector("#center_column > div");
+
 
     private String ContactUsPageURL = "http://automationpractice.com/index.php?controller=contact";
     private WebDriver driver;
+
+    public String getErrorMessage(){
+        return driver.findElement(errormessageID).getText();
+    }
 
     public ContactUsPage(WebDriver driver) {
         this.driver = driver;

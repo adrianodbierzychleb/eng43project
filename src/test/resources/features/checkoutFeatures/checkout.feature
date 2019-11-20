@@ -42,6 +42,21 @@ Feature: Checkout
       When I proceed to go to the summary page
       And I want to remove an item before paying
       Then The item should be removed from the basket
+<<<<<<< HEAD
       
+=======
+
+      @Outline
+      Scenario: As a user I want to be able to log in so that I can proceed to checkout
+        Given I have added an item to the basket
+        And I go to the basket via the checkout button
+        And I press the proceed to checkout button in the summary
+        And I am not signed in
+        When I input my username password
+        Then I will be redirected  to the address form
+
+
+
+>>>>>>> checkout
 
 

@@ -42,14 +42,6 @@ public class SignUpTest {
 //        site.closeDriver();
 //    }
 
-    @Test
-    public void emailAccountExists() {
-
-        Iterator<WebElement> itr = site.getSignup().goToSignUpURL().inputEmail("srehman@spartaglobal.com").clickCreateAccountButton().getEmailExistsError().iterator();
-        while(itr.hasNext()){
-            System.out.println(itr.next().getText());
-        }
-    }
 
     @Test
     public void signUpSuccessful (){

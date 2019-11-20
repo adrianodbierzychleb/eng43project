@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -16,38 +17,51 @@ public class Signup {
     public WebDriver driver;
  //   public WebDriverWait webDriverWait;
 
+    //shams variables
     private String signUpURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     private By emailFieldID = By.id("email_create");
-    private By AccountexistsErrorID = By.id("create_account_error");
+    private By emailErrorText = By.xpath("//*[@id=\"create_account_error\"]");
     private By createAccountButton = By.name("SubmitCreate");
     private String accountFormURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation";
-    //pawels
+
+   //Yas's VAriables
+   private By titles = By.name("id_gender");
+    private By firstname = By.id("customer_firstname");
+    private By lastname = By.id("customer_lastname");
+    private By email = By.id("email"); // value= eng45@test.com
+    private By password = By.name("passwd");
+    private By dateDay = By.id("days");
+    private By dateMonth = By.id("months");
+    private By dateYear = By.id("years");
+    private By newsletter = By.id("newsletter");
+    private By specialOffer = By.id("optin");
+
+    //pawels variables
     private By yourAddressFirstNameFieldID = By.id("firstname");
     private By yourAddressLastNameFieldID = By.id("lastname");
     private By yourAddressCompanyFieldID = By.id("company");
     private By yourAddressAddress1FieldID = By.id("address1");
     private By yourAddressAddress2FieldID = By.id("address2");
     private By yourAddressCityFieldID = By.id("city");
-   // private By yourAddressStateFieldID = By.id("id_state");
+    private By yourAddressSelectStateID = By.id("id_state");
     private By yourAddressPostcodeFieldID = By.id("postcode");
-    //  private By yourAddressCountrySelectFieldID = By.id("id_country");
+    private By yourAddressCountrySelectID = By.id("id_country");
     private By yourAddressAdditionalInformationFieldID = By.id("other");
     private By yourAddressHomePhoneFieldID = By.id("phone");
     private By yourAddressMobilePhoneFieldID = By.id("phone_mobile");
     private By yourAddressAddressAliasFieldID = By.id("alias");
     private By yourAddressRegisterButtonID = By.id("submitAccount");
 
-
     public Signup(WebDriver driver) {
         this.driver = driver;
-      //  this.driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-       // webDriverWait = new WebDriverWait(driver, 10);
     }
 
     public Signup goToSignUpURL(){
         driver.navigate().to(signUpURL);
         return this;
     }
+
+    //*******************Email Authentication Methods ************************
 
     public Signup inputEmail(String email){
         driver.findElement(emailFieldID).sendKeys(email);
@@ -56,13 +70,11 @@ public class Signup {
 
     public Signup clickCreateAccountButton(){
         driver.findElement(createAccountButton).click();
-    //    webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(yourAddressFirstNameFieldID));
         return this;
     }
 
-    public List<WebElement> getEmailExistsError(){
-        return driver.findElements(AccountexistsErrorID);
-
+    public String getEmailError(){
+        return driver.findElement(emailErrorText).getText();
     }
 
     public Signup goToCreateAccountPage(){
@@ -70,6 +82,67 @@ public class Signup {
         return this;
     }
 
+
+    //*********************Personal information field methods*********************
+
+    public void getTitle () {
+        waiting();
+        List<WebElement> title = driver.findElements(titles);
+        for(org.openqa.selenium.WebElement titles : title) {
+            driver.findElement(By.name(titles.getAttribute("name"))).click();
+            driver.findElement(By.name(titles.getAttribute("name"))).isSelected();
+        }
+    }
+    public void inputFirstName (String firstnameText) {
+        waiting();
+        driver.findElement(firstname).sendKeys(firstnameText);
+    }
+    public void inputLastname (String lastnameText) {
+        waiting();
+        driver.findElement(lastname).sendKeys(lastnameText);
+    }
+
+    public void inputPassword (String passwordText) {
+        waiting();
+        driver.findElement(password).sendKeys(passwordText);
+    }
+    public void checkDayOptions () {
+        waiting();
+        WebElement day = driver.findElement(dateDay);
+        Select option = new Select(day);
+        for (int i = 0; i < option.getOptions().size() ; i++) {
+            option.selectByIndex(i);
+            option.getFirstSelectedOption().getText();
+        }
+    }
+    public void checkMonthOptions () {
+        waiting();
+        WebElement month = driver.findElement(dateMonth);
+        Select option = new Select(month);
+        for (int i = 0; i < option.getOptions().size(); i++) {
+            option.selectByIndex(i);
+            option.getFirstSelectedOption().getText();
+        }
+    }
+    public void checkYearOptions () {
+        waiting();
+        WebElement year = driver.findElement(dateYear);
+        Select option = new Select(year);
+        for (int i = 0; i < option.getOptions().size(); i++) {
+            option.selectByIndex(i);
+            option.getFirstSelectedOption().getText();
+        }
+    }
+    public void clickNewsletter () {
+        waiting();
+        driver.findElement(newsletter).click();
+    }
+    public void clickSpecialOffer () {
+        waiting();
+        driver.findElement(specialOffer).click();
+    }
+
+    //*****************Your Address Field Methods******************
 
     public Signup inputFirstNameIntoYourAddressSection(String firstname) {
         waiting();
@@ -98,7 +171,18 @@ public class Signup {
     }
 
     public Signup inputCityIntoYourAddressSection(String city) {
-        driver.findElement(yourAddressFirstNameFieldID).sendKeys(city);
+        driver.findElement(yourAddressCityFieldID).sendKeys(city);
+        return this;
+    }
+
+    public Signup checkAllSatesInYourAddressSection(){
+        WebElement continents = driver.findElement(yourAddressSelectStateID);
+        Select drpContinents = new Select(continents);
+
+        for (int i = 0; i < drpContinents.getOptions().size(); i++){
+            drpContinents.selectByIndex(i);
+            drpContinents.getFirstSelectedOption().getText();
+        }
         return this;
     }
 
@@ -107,8 +191,19 @@ public class Signup {
         return this;
     }
 
+    public Signup checkAllCountriesInYourAddressSection(){
+        WebElement continents = driver.findElement(yourAddressCountrySelectID);
+        Select drpContinents = new Select(continents);
+
+        for (int i = 0; i < drpContinents.getOptions().size(); i++){
+            drpContinents.selectByIndex(i);
+            drpContinents.getFirstSelectedOption().getText();
+        }
+        return this;
+    }
+
     public Signup inputAdditionalInfoIntoYourAddressSection(String additionalInfo) {
-        driver.findElement(yourAddressFirstNameFieldID).sendKeys(additionalInfo);
+        driver.findElement(yourAddressAdditionalInformationFieldID).sendKeys(additionalInfo);
         return this;
     }
 
@@ -123,7 +218,7 @@ public class Signup {
     }
 
     public Signup inputAliasInfoIntoYourAddressSection(String alias) {
-        driver.findElement(yourAddressFirstNameFieldID).sendKeys(alias);
+        driver.findElement(yourAddressAddressAliasFieldID).sendKeys(alias);
         return this;
     }
 
@@ -132,8 +227,13 @@ public class Signup {
         return this;
     }
 
+    //****************  browser wait method **************
+
     public void waiting(){
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
-}
 
+    public void closeDriver(){
+        driver.close();
+    }
+}

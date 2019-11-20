@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\BB\\chromedriver_win32\\chromedriver.exe");
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Adrian Odbierzychleb\\Downloads\\chromedriver.exe");
 
 
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
@@ -141,7 +141,6 @@ public class CheckoutStepDefs {
     @And("I want to proceed to pay")
     public void iWantToProceedToPay() {
         automationPracticeSite.getBasket().proceedToCheckout().proceedToSummary();
-        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
 
     }
 
@@ -180,4 +179,49 @@ public class CheckoutStepDefs {
         Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=237923",currentUrl);
     }
 
+
+
+    // Scenario add comment to order
+
+    @Given("I have an item in my basket")
+    public void iHaveAnItemInMyBasket() {
+        automationPracticeSite.getBasket().addItemToBasket();
+        automationPracticeSite.getBasket().proceedToCheckout().proceedToSummary();
+    }
+
+    @And("I am logged in to my account")
+    public void iAmLoggedInToMyAccount() {
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+    }
+
+    @When("I add a comment to the text box")
+    public void iAddACommentToTheTextBox() {
+        automationPracticeSite.getCheckout().fillInCommentBox();
+    }
+
+    @Then("The order should proceed to the next tab with the comment")
+    public void theOrderShouldProceedToTheNextTabWithTheComment() {
+        automationPracticeSite.getCheckout().clickProceedToCheckoutAddress();
+    }
+
+
+    // Scenario Tick Terms and Conditions Box
+
+    @Given("I have proceeded to the shipping tab")
+    public void iHaveProceededToTheShippingTab() {
+        automationPracticeSite.getBasket().addItemToBasket();
+        automationPracticeSite.getBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+        automationPracticeSite.getCheckout().clickProceedToCheckoutAddress();
+    }
+
+    @When("I click the terms and conditions box")
+    public void iClickTheTermsAndConditionsBox() {
+        automationPracticeSite.getCheckout().agreeTermsConditions();
+    }
+
+    @Then("I should be taken to the payment page")
+    public void iShouldBeTakenToThePaymentPage() {
+        automationPracticeSite.getCheckout().clickProceedToCheckoutShipping();
+    }
 }

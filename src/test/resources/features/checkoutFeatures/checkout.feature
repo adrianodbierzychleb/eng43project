@@ -72,3 +72,17 @@ Feature: Checkout
               Then I should be able to alter my billing address
 
 
+
+              @Outline
+              Scenario: As I user I want to be able to add a comment to my order
+                Given I have an item in my basket
+                And I am logged in to my account
+                When I add a comment to the text box
+                Then The order should proceed to the next tab with the comment
+
+
+                @Outline
+                Scenario: As I user want to be able to tick the terms and conditions test
+                  Given I have proceeded to the shipping tab
+                  When I click the terms and conditions box
+                  Then I should be taken to the payment page

@@ -15,11 +15,12 @@ public class Checkout {
 
     private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
 
-
-    //private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
-
-
     private By saveAddressChanges = By.id("submitAddress");
+
+    private By proceedToCheckoutButtonInAddress = By.xpath("/html/body/div/div[2]/div/div[3]/div/form/p/button/span");
+    private By proceedToCheckoutButtonInShipping = By.xpath("/html/body/div/div[2]/div/div[3]/div/div/form/p/button/span");
+    private By tcCheckbox = By.xpath("/html/body/div/div[2]/div/div[3]/div/div/form/div/p[2]/div/span/input");
+    private By commentBox = By.xpath("/html/body/div/div[2]/div/div[3]/div/form/div/div[3]/textarea");
 
     public Checkout(WebDriver driver) {
         this.driver = driver;
@@ -62,10 +63,33 @@ public class Checkout {
         return this;
     }
 
-
     public Checkout clickSaveAddressButton(){
         driver.findElement(saveAddressChanges).click();
         return this;
     }
+
+    public Checkout clickProceedToCheckoutAddress()
+    {
+        driver.findElement(proceedToCheckoutButtonInAddress).click();
+        return this;
+    }
+
+    public Checkout fillInCommentBox(){
+        driver.findElement(commentBox).sendKeys("What is my name?");
+        return this;
+    }
+
+    public Checkout clickProceedToCheckoutShipping()
+    {
+        driver.findElement(proceedToCheckoutButtonInShipping).click();
+        return this;
+    }
+
+    public Checkout agreeTermsConditions(){
+        driver.findElement(tcCheckbox).click();
+        return this;
+    }
+
+
 
 }

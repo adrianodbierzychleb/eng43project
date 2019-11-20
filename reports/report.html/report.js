@@ -203,4 +203,254 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.scenarioOutline({
+  "name": "If I input an incorrect phone format then I will receive an error",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@outline"
+    }
+  ]
+});
+formatter.step({
+  "name": "I have an account",
+  "keyword": "Given "
+});
+formatter.step({
+  "name": "I attempt to change my address before the delivery",
+  "keyword": "When "
+});
+formatter.step({
+  "name": "I am taken to the page to change my address",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I change my \u003cphone number\u003e",
+  "keyword": "And "
+});
+formatter.examples({
+  "name": "",
+  "description": "",
+  "keyword": "Examples",
+  "rows": [
+    {
+      "cells": [
+        "phone number"
+      ]
+    },
+    {
+      "cells": [
+        "02089402333"
+      ]
+    },
+    {
+      "cells": [
+        "0208940233"
+      ]
+    },
+    {
+      "cells": [
+        "0208940"
+      ]
+    },
+    {
+      "cells": [
+        "02089"
+      ]
+    }
+  ]
+});
+formatter.scenario({
+  "name": "If I input an incorrect phone format then I will receive an error",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@outline"
+    }
+  ]
+});
+formatter.step({
+  "name": "I have an account",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_have_an_account()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I attempt to change my address before the delivery",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_attempt_to_change_my_address_before_the_delivery()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I am taken to the page to change my address",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_am_taken_to_the_page_to_change_my_address()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I change my 02089402333",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenario({
+  "name": "If I input an incorrect phone format then I will receive an error",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@outline"
+    }
+  ]
+});
+formatter.step({
+  "name": "I have an account",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_have_an_account()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I attempt to change my address before the delivery",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_attempt_to_change_my_address_before_the_delivery()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I am taken to the page to change my address",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_am_taken_to_the_page_to_change_my_address()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I change my 0208940233",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenario({
+  "name": "If I input an incorrect phone format then I will receive an error",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@outline"
+    }
+  ]
+});
+formatter.step({
+  "name": "I have an account",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_have_an_account()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I attempt to change my address before the delivery",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_attempt_to_change_my_address_before_the_delivery()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I am taken to the page to change my address",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_am_taken_to_the_page_to_change_my_address()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I change my 0208940",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenario({
+  "name": "If I input an incorrect phone format then I will receive an error",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@outline"
+    }
+  ]
+});
+formatter.step({
+  "name": "I have an account",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_have_an_account()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I attempt to change my address before the delivery",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_attempt_to_change_my_address_before_the_delivery()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I am taken to the page to change my address",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "CheckoutStepDefs.i_am_taken_to_the_page_to_change_my_address()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I change my 02089",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
 });

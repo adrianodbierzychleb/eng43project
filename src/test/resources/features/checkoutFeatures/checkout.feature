@@ -69,7 +69,17 @@ Feature: Checkout
               Given I have items in my basket
               And I want to proceed to pay
               When I press the change billing address button
-              Then I should be able to alter my billing address
+              Then My delivery address should update
+
+
+
+              Scenario: If I want to update my city and address in Billing address
+            Given I am at the address page in the checkout
+            When I press the change billing address button
+            And I change my address with "<address>"
+            And I change my city with "<city>"
+            Then My delivery address should update
+
 
 
 

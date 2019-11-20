@@ -72,7 +72,6 @@ public class Basket {
                 clickShoppingButton();
             }
         }
-        proceedToCheckout();
         return this;
     }
 

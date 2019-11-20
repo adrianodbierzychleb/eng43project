@@ -8,11 +8,10 @@ public class Checkout {
     private WebDriver driver;
     private String checkoutUrl = "http://automationpractice.com/index.php";
     private By addressUpdateButton = By.xpath("//*[@id=\"address_invoice\"]/li[7]/a");
-<<<<<<< HEAD
+
     private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
-=======
+
     private By billingUpdateButton = By.xpath("/html/body/div/div[2]/div/div[3]/div/form/div/div[2]/div[2]/ul/li[7]/a/span");
->>>>>>> checkout
 
     public Checkout(WebDriver driver) {
         this.driver = driver;
@@ -23,19 +22,19 @@ public class Checkout {
         return this;
     }
 
-    public Checkout clickDeliveryAddressUpdateButton(){
+    public Checkout clickDeliveryAddressUpdateButton() {
         driver.findElement(addressUpdateButton).click();
         return this;
     }
 
-<<<<<<< HEAD
-    public Checkout clickDeliveryAddAddressButton (){
+    public Checkout clickDeliveryAddAddressButton() {
         driver.findElement(addNewAddressButton).click();
-    return this;
-=======
-    public Checkout clickBillingUpdateButton(){
-        driver.findElement(billingUpdateButton).click();
         return this;
->>>>>>> checkout
     }
-}
+        public Checkout clickBillingUpdateButton() {
+            driver.findElement(billingUpdateButton).click();
+            return this;
+
+        }
+    }
+

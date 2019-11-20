@@ -99,21 +99,16 @@ public class Basket {
         driver.findElement(By.name("quantity_3_13_0_0")).sendKeys(Keys.ENTER);
         return this;
     }
-
     public Basket addItemToBasket() {
         goToHomePageURL();
         driver.findElement(printedDressQuickBuy).click();
         return this;
     }
-
-
     public Basket proceedToSummary() {
         waitForElement();
         driver.findElement(By.linkText("Proceed to checkout")).click();
         return this;
     }
-
-
     public Basket proceedToCheckout() {
         waitForElement();
         driver.findElement(By.linkText("Proceed to checkout")).click();
@@ -135,6 +130,7 @@ public class Basket {
         }
         return this;
     }
+
     public Basket checkTax() {
         waitForElement();
         WebElement totalWithoutTax = driver.findElement(By.id("total_price_without_tax"));

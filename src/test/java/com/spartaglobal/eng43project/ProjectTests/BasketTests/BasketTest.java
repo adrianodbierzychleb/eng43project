@@ -48,8 +48,7 @@ public class BasketTest {
     @Test
     public void goToDressSite() {
         automationPracticeSite.getBasket().goToProceedToCheckout().getQuantity("10");
-        Assert.assertNotEquals(automationPracticeSite.getBasket().grandTotalString,
-                automationPracticeSite.getBasket().totalWithoutTaxString);
+        Assert.assertNotEquals(automationPracticeSite.getBasket().grandTotalString, automationPracticeSite.getBasket().totalWithoutTaxString);
     }
 
     @Test

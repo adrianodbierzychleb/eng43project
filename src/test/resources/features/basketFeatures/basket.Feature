@@ -1,7 +1,6 @@
-Feature: Basket  
+Feature: Basket
   As a user I want to be able to add and remove items from the basket and view the total I would have to pay
   so I can easily purchase the right items
-
 
   Scenario: As a user I want to see all the items I have selected before I
   checkout so that I can keep track of the money I’m spending.
@@ -16,6 +15,7 @@ Feature: Basket
     Given I am in Woman Catalog page
     When I have added multiple products using the quick view functionality to the cart
     Then I can process to payment by pressing the checkout button
+
 
   Scenario: As a user I want to select an item and write down the
   quantity instead of clicking multiple times so that I save time.
@@ -66,4 +66,5 @@ Feature: Basket
     And change the quantity of said item in the menu
     Then the correct amount of that item are displayed
     And the correct total cost is displayed
+
 

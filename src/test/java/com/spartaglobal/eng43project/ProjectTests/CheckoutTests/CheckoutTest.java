@@ -30,11 +30,13 @@ public class CheckoutTest {
     public void shouldGoToCheckoutAndSignIn() {
         automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
         automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+        automationPracticeSite.getCheckout().clickDeliveryAddressUpdateButton();
      }
 
      @Test
-    public void addItemToBasketAndCheckout(){
-        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
+    public void addItemToBasketAndCheckoutAndSignUpIfUserDoesNotHaveAnAccount(){
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getSignup().inputEmail("test@test.com").clickCreateAccountButton();
      }
 
 }

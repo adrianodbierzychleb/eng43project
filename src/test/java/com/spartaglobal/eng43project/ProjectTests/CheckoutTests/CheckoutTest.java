@@ -52,7 +52,7 @@ public class CheckoutTest {
     public void shouldClickAddAddressButton(){
         automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
         automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
-        automationPracticeSite.getCheckout().clickDeliveryAddAddressButton();
+        automationPracticeSite.getCheckout().clickAddNewAddressButton();
     }
 
 }

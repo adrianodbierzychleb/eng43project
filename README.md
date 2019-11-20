@@ -29,17 +29,7 @@ The tools required consist of selenium, cucumber, junit, chrome web driver and t
 
 In order to run the code and tests it is required to pull the repository from git hub. Once this is done the project needs to be open in IntelliJ and it is possible to proceed with carrying out the tests.
 
-The website consists of four main features that require
-testing. The features are as following:
-<p>
-<b>- Basket</b>
 
-<b>- Pages/Navigation</b>
-
-<b>- Register/ Sign in</b>
-
-<b>- Checkout</b>
-</p>
 
 
 

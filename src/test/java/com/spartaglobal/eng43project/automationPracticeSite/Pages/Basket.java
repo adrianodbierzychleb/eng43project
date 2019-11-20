@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Basket {
@@ -77,9 +78,26 @@ public class Basket {
         return this;
     }
 
-/*    public Basket increaseTheQuantityOfProduct(){
-        
+    public Basket increaseQuantityInSummary(){
+        String[] quantity;
+
+        quantity = new String[7];
+
+        quantity[1] = String.valueOf(By.id("cart_quantity_up_1_1_0_0"));
+        quantity[2] = String.valueOf(By.id("cart_quantity_up_2_7_0_0"));
+        quantity[3] = String.valueOf(By.id("cart_quantity_up_3_13_0_0"));
+        quantity[4] = String.valueOf(By.id("cart_quantity_up_4_16_0_0"));
+        quantity[5] = String.valueOf(By.id("cart_quantity_up_5_19_0_0"));
+        quantity[6] = String.valueOf(By.id("cart_quantity_up_6_31_0_0"));
+        quantity[7] = String.valueOf(By.id("cart_quantity_up_7_34_0_0"));
         return this;
-    }*/
+    }
+
+    public Basket increaseTheQuantityOfProduct(){
+        selectMultipleProductToCart();
+        
+
+        return this;
+    }
 
 }

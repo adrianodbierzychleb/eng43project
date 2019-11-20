@@ -9,9 +9,15 @@ public class Checkout {
     private String checkoutUrl = "http://automationpractice.com/index.php";
     private By addressUpdateButton = By.xpath("//*[@id=\"address_invoice\"]/li[7]/a");
 
+<<<<<<< HEAD
     private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
+=======
+    private By addressDropDown = By.id("id_address_delivery");
+    private By dropDownHomeAddress = By.xpath("/html/body/div/div[2]/div/div[3]/div/form/div/div[1]/div[1]/div/div/select/option[2]");
+>>>>>>> 3d7edda4ce1c4ef83e2349d490fe10552fa7cba0
 
     private By billingUpdateButton = By.xpath("/html/body/div/div[2]/div/div[3]/div/form/div/div[2]/div[2]/ul/li[7]/a/span");
+
 
     public Checkout(WebDriver driver) {
         this.driver = driver;
@@ -27,6 +33,7 @@ public class Checkout {
         return this;
     }
 
+<<<<<<< HEAD
     public Checkout clickDeliveryAddAddressButton() {
         driver.findElement(addNewAddressButton).click();
         return this;
@@ -38,3 +45,28 @@ public class Checkout {
         }
     }
 
+=======
+
+
+    public Checkout clickDropDownMenu(){
+
+        driver.findElement(addressDropDown).click();
+
+
+        return this;
+
+    }
+
+    public Checkout selectAddressFromDropDown(){
+        driver.findElement(dropDownHomeAddress).click();
+        return this;
+    }
+
+
+    public Checkout clickBillingUpdateButton(){
+        driver.findElement(billingUpdateButton).click();
+        return this;
+    }
+
+}
+>>>>>>> 3d7edda4ce1c4ef83e2349d490fe10552fa7cba0

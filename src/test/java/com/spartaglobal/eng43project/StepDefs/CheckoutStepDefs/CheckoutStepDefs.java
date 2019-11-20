@@ -12,7 +12,9 @@ import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\BB\\chromedriver_win32\\chromedriver.exe");
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Adrian Odbierzychleb\\Downloads\\chromedriver.exe");
+
+
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
     /**
@@ -122,29 +124,41 @@ public class CheckoutStepDefs {
     public void iWillBeRedirectedToASignUpPageInOrderToCreateAnAccount() {
     }
 
+
+
+    // As a user I want to be able to get my order delivered to a different address
+
     /**
      *           Scenario: As a user I want to be able to get my order delivered to a different address
      */
 
+
     @Given("I have items in my basket")
     public void iHaveItemsInMyBasket() {
+        automationPracticeSite.getBasket().addItemToBasket();
     }
 
     @And("I want to proceed to pay")
     public void iWantToProceedToPay() {
+        automationPracticeSite.getBasket().proceedToCheckout().proceedToSummary();
     }
 
-    @When("I want to change my delivery address")
-    public void iWantToChangeMyDeliveryAddress() {
+    @And("I am logged in")
+    public void iAmLogedIn() {
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
     }
 
-    @And("I press the button to change address")
+    @When("I press the button to change address")
     public void iPressTheButtonToChangeAddress() {
+        automationPracticeSite.getCheckout().clickDropDownMenu();
     }
 
     @Then("I should be able to select a new address")
     public void iShouldBeAbleToSelectANewAddress() {
+        automationPracticeSite.getCheckout().selectAddressFromDropDown();
+        automationPracticeSite.getCheckout().clickDropDownMenu();
     }
+
 
     /**
     * Scenario : I want to be able to change my billing address
@@ -163,4 +177,5 @@ public class CheckoutStepDefs {
         String currentUrl = seleniumConfig.getDriver().getCurrentUrl();
         Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=237923",currentUrl);
     }
+
 }

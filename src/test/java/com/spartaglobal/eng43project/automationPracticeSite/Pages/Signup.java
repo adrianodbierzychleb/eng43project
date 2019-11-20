@@ -101,7 +101,7 @@ public class Signup {
     }
 
     public Signup inputCityIntoYourAddressSection(String city) {
-        driver.findElement(yourAddressFirstNameFieldID).sendKeys(city);
+        driver.findElement(yourAddressCityFieldID).sendKeys(city);
         return this;
     }
 

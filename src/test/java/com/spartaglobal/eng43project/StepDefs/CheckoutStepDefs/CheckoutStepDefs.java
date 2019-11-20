@@ -7,10 +7,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Fabio Fernandes\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\BB\\chromedriver_win32\\chromedriver.exe");
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
     /**
@@ -19,24 +21,33 @@ public class CheckoutStepDefs {
 
     @Given("I am at the address page in the checkout")
     public void i_am_at_the_address_page_in_the_checkout() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+       String currUrl =  seleniumConfig.getDriver().getCurrentUrl();
+      //  Assert.assertEquals("http://automationpractice.com/index.php?controller=order&step=1",currUrl);
     }
 
     @When("I click the update address button")
     public void i_click_the_update_address_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        automationPracticeSite.getCheckout().clickDeliveryAddressUpdateButton();
     }
 
     @And("I am taken to the page to change my address")
     public void i_am_taken_to_the_page_to_change_my_address() {
-        System.out.println("changing pages");
+        String currUrl = seleniumConfig.getDriver().getCurrentUrl();
+        Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=239178",currUrl);
     }
 
-    @And("I change my {string}")
-    public void i_change_my(String string) {
-        System.out.println("ability to change the address");
+    @And("I change my address with {string}")
+    public void i_change_my_address(String string) {
+        seleniumConfig.getDriver().findElement(By.id("address1")).clear();
+        automationPracticeSite.getSignup().inputAddress1IntoYourAddressSection(string);
+    }
+
+    @And("I change my city with {string}")
+    public void i_change_my_city(String string) {
+        seleniumConfig.getDriver().findElement(By.id("city")).clear();
+        automationPracticeSite.getSignup().inputCityIntoYourAddressSection(string);
     }
 
     /**
@@ -111,6 +122,10 @@ public class CheckoutStepDefs {
     public void iWillBeRedirectedToASignUpPageInOrderToCreateAnAccount() {
     }
 
+    /**
+     *           Scenario: As a user I want to be able to get my order delivered to a different address
+     */
+
     @Given("I have items in my basket")
     public void iHaveItemsInMyBasket() {
     }
@@ -129,5 +144,23 @@ public class CheckoutStepDefs {
 
     @Then("I should be able to select a new address")
     public void iShouldBeAbleToSelectANewAddress() {
+    }
+
+    /**
+    * Scenario : I want to be able to change my billing address
+     */
+
+
+
+    @When("I press the change billing address button")
+    public void iPressTheChangeBillingAddressButton() {
+
+        automationPracticeSite.getCheckout().clickBillingUpdateButton();
+    }
+
+    @Then("I should be able to alter my billing address")
+    public void iShouldBeAbleToAlterMyBillingAddress() {
+        String currentUrl = seleniumConfig.getDriver().getCurrentUrl();
+        Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=237923",currentUrl);
     }
 }

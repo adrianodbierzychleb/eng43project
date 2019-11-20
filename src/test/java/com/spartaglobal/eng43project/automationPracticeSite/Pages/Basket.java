@@ -39,10 +39,10 @@ public class Basket {
         return this;
     }
 
-/*    public Basket goToHomePageURL(){
+    public Basket goToHomePageURL(){
         navigationPages.homePage().goToHomePageURL();
         return this;
-    }*/
+    }
 
     public Basket waitForElement(){
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -86,11 +86,7 @@ public class Basket {
     }
 
     public Basket decreaseQuantityInSummary(){
-//        addItemToBasket().waitForElement().proceedToCheckout().waitForElement();
-//        for (int i = 0; i < 5; i++) {
-//            driver.findElement(By.id("cart_quantity_up_3_13_0_0")).click();
-//            waitForElement();
-//        }
+        //increaseQuantityInSummary().waitForElement();
         addItemToBasket().waitForElement().proceedToCheckout().waitForElement();
         driver.findElement(summaryProduct3SubtractButtonID).click();
         return this;

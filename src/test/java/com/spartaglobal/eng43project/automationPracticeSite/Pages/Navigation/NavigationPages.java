@@ -1,4 +1,5 @@
 package com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation;
+
 import org.openqa.selenium.WebDriver;
 
 public class NavigationPages {

@@ -15,8 +15,7 @@ public class CheckoutTest {
 
     @Before
     public void setup(){
-
-
+        
         SeleniumConfig seleniumConfig = new SeleniumConfig("chrome", "C:\\Users\\Dana Korang-Awua\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     }
@@ -53,7 +52,22 @@ public class CheckoutTest {
     public void shouldClickAddAddressButton(){
         automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
         automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
-        automationPracticeSite.getCheckout().clickDeliveryAddAddressButton();
+        automationPracticeSite.getCheckout().clickAddNewAddressButton();
     }
+
+    @Test
+    public void shouldAddComment() throws Exception{
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+        automationPracticeSite.getCheckout().fillInCommentBox();
+     }
+
+     @Test
+    public void shouldTickTC() throws Exception{
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+        automationPracticeSite.getCheckout().clickProceedToCheckoutAddress();
+        automationPracticeSite.getCheckout().agreeTermsConditions();
+     }
 
 }

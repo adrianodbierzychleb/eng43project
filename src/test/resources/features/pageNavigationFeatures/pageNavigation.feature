@@ -12,7 +12,7 @@ Feature: Navigate between pages
       |category |categoryURL                                                              |
       | Women   |http://automationpractice.com/index.php?id_category=3&controller=category|
       | Dresses |http://automationpractice.com/index.php?id_category=8&controller=category|
-      | T-Shirts|http://automationpractice.com/index.php?id_category=8&controller=category|
+      | T-Shirts|http://automationpractice.com/index.php?id_category=5&controller=category|
 
 Feature: Navigate to sub-category
   As a user I want to be able to navigate into the sub-categories from the navigation bar

@@ -3,6 +3,8 @@ package com.spartaglobal.eng43project.ProjectTests.PageNavigationTests;
 import com.spartaglobal.eng43project.SeleniumConfig.SeleniumConfig;
 import com.spartaglobal.eng43project.automationPracticeSite.AutomationPracticeSite;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.CommonPageProperties;
+import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.ContactUsPage;
+import gherkin.deps.com.google.gson.internal.$Gson$Preconditions;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -18,19 +20,20 @@ public class PageNavigationTest {
     private static SeleniumConfig seleniumConfig;
     private static AutomationPracticeSite automationPracticeSite;
     private static CommonPageProperties commonPageProperties;
+    private static ContactUsPage contactUsPage;
 
     @BeforeClass
     public static void setup(){
         // TODO: 18/11/2019 Change the driverPath to your own path!
-        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\IYotova\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\SHoque\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         commonPageProperties = new CommonPageProperties(seleniumConfig.getDriver());
     }
 
-    @AfterClass
-    public static void teardown(){
-        seleniumConfig.getDriver().close();
-    }
+//    @AfterClass
+//    public static void teardown(){
+//        seleniumConfig.getDriver().close();
+//    }
 
     @Test
     public void checkUrlIsOpened(){

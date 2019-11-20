@@ -12,9 +12,9 @@ import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Fab\\chromedriver.exe");
 
 
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Dana Korang-Awua\\Downloads\\chromedriver_win32\\chromedriver.exe");
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
     /**
@@ -169,7 +169,6 @@ public class CheckoutStepDefs {
 
     @When("I press the change billing address button")
     public void iPressTheChangeBillingAddressButton() {
-
         automationPracticeSite.getCheckout().clickBillingUpdateButton();
     }
 
@@ -205,7 +204,20 @@ public class CheckoutStepDefs {
         automationPracticeSite.getCheckout().clickProceedToCheckoutAddress();
     }
 
+    /**
+     *   Scenario Outline: As a user I want to be able to add a new address
+     */
 
+    @When("I press the add new address button")
+    public void i_press_the_add_new_address_button() {
+        automationPracticeSite.getCheckout().clickDeliveryAddAddressButton();
+    }
+
+    @Then("I should be redirected to the address form")
+    public void i_should_be_redirected_to_the_address_form() {
+        String addAddressCurrentURL = seleniumConfig.getDriver().getCurrentUrl();
+        Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1", addAddressCurrentURL);
+    }
     // Scenario Tick Terms and Conditions Box
 
     @Given("I have proceeded to the shipping tab")
@@ -225,4 +237,47 @@ public class CheckoutStepDefs {
     public void iShouldBeTakenToThePaymentPage() {
         automationPracticeSite.getCheckout().clickProceedToCheckoutShipping();
     }
+
+    /**
+     *   Scenario Outline: As I user I want the option to pay by bank wire
+     */
+
+    @Given("I click the pay by bank wire option")
+    public void i_click_the_pay_by_bank_wire_option() {
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com", "spartaglobal");
+
+       automationPracticeSite.getCheckout().clickProceedToCheckoutAddress().agreeTermsConditions().clickProceedToCheckoutShipping().payByBankWire();
+    }
+
+    @Then("I should be taken to the order summary page where it will confirm that I have paid by bank wire")
+    public void i_should_be_taken_to_the_order_summary_page_where_it_will_confirm_that_I_have_paid_by_bank_wire() {
+        String bankwireCurrentURL = seleniumConfig.getDriver().getCurrentUrl();
+        Assert.assertEquals("http://automationpractice.com/index.php?fc=module&module=bankwire&controller=payment", bankwireCurrentURL);
+    }
+
+    /**
+     *   Scenario Outline: As I user I want the option to pay by cheque
+     */
+
+    @Given("I click the pay by cheque option")
+    public void i_click_the_pay_by_cheque_option() {
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com", "spartaglobal");
+
+        automationPracticeSite.getCheckout().clickProceedToCheckoutAddress().agreeTermsConditions().clickProceedToCheckoutShipping().payByCheque();
+    }
+
+    @Then("I should be taken to the order summary page where it will confirm that I have paid by cheque")
+    public void i_should_be_taken_to_the_order_summary_page_where_it_will_confirm_that_I_have_paid_by_cheque() {
+        String chequeCurrentURL = seleniumConfig.getDriver().getCurrentUrl();
+        Assert.assertEquals("http://automationpractice.com/index.php?fc=module&module=cheque&controller=payment", chequeCurrentURL);
+    }
+
+    @Then("I click the confirm button")
+    public void i_click_the_confirm_button() {
+        automationPracticeSite.getBasket().waitForElement();
+        automationPracticeSite.getCheckout().clickConfirmOrderButton();
+    }
+
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
-public class CommonPageProperties {
+public class NavBar {
 
     private WebDriver driver;
     private By womenButtonHeader = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[6]/ul/li[1]/a");
@@ -20,16 +20,16 @@ public class CommonPageProperties {
     private By tshirtsButtonHeader = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[6]/ul/li[3]/a");
 
 
-    public CommonPageProperties(WebDriver driver) {
+    public NavBar(WebDriver driver) {
         this.driver = driver;
     }
 
-    public CommonPageProperties clickWomenInNavBar(){
+    public NavBar clickWomenInNavBar(){
         driver.findElement(womenButtonHeader).click();
         return this;
     }
 
-    public CommonPageProperties clickWomenHeaderTopsTshirtLink(){
+    public NavBar clickWomenHeaderTopsTshirtLink(){
         WebElement element = driver.findElement(womenButtonHeader);
         Actions builder = new Actions(driver);
         builder.moveToElement(element).perform();
@@ -38,7 +38,7 @@ public class CommonPageProperties {
        return this;
     }
 
-    public CommonPageProperties clickWomenHeaderTopsBlousesLink(){
+    public NavBar clickWomenHeaderTopsBlousesLink(){
         WebElement element = driver.findElement(womenButtonHeader);
         Actions builder = new Actions(driver);
         builder.moveToElement(element).perform();
@@ -47,12 +47,12 @@ public class CommonPageProperties {
         return this;
     }
 
-    public CommonPageProperties clickDressesHeader(){
+    public NavBar clickDressesHeader(){
         driver.findElement(dressesButtonHeader).click();
         return this;
     }
 
-    public CommonPageProperties clickDressesHeaderCasualDresses(){
+    public NavBar clickDressesHeaderCasualDresses(){
         WebElement element = driver.findElement(dressesButtonHeader);
         Actions builder = new Actions(driver);
         builder.moveToElement(element).perform();
@@ -61,7 +61,7 @@ public class CommonPageProperties {
         return this;
     }
 
-    public CommonPageProperties clickDressesHeaderEveningDresses(){
+    public NavBar clickDressesHeaderEveningDresses(){
         WebElement element = driver.findElement(dressesButtonHeader);
         Actions builder = new Actions(driver);
         builder.moveToElement(element).perform();
@@ -71,7 +71,7 @@ public class CommonPageProperties {
     }
 
 
-    public CommonPageProperties clickDressesHeaderSummerDresses(){
+    public NavBar clickDressesHeaderSummerDresses(){
         WebElement element = driver.findElement(dressesButtonHeader);
         Actions builder = new Actions(driver);
         builder.moveToElement(element).perform();
@@ -79,7 +79,7 @@ public class CommonPageProperties {
         driver.findElement(dressesButtonHeaderSummer).click();
         return this;
     }
-    public CommonPageProperties clickTshirtHeader(){
+    public NavBar clickTshirtHeader(){
         driver.findElement(tshirtsButtonHeader).click();
         return this;
     }

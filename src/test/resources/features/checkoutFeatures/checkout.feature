@@ -26,6 +26,7 @@ Feature: Checkout
         When I attempt to change my address before the delivery
         And I am taken to the page to change my address
         And I change my <phone number>
+        Then I receive an error message
     Examples:
       | phone number |
       |02089402333 |
@@ -34,19 +35,7 @@ Feature: Checkout
       | 02089       |
 
 
-#Feature: As a registered user,
-#  I want to be able to delete my address
-#  So that I can remove any unwanted addresses
-#
-#
-#  Scenario Outline: If I want to delete my delivery address I will be able to do  so
-#    Given I have an account
-#    When I attempt to delete my address
-#    And I delete my "<address>"
-#    Then My address should be deleted
-#
-#    Examples:
-#      | address |
+
 
 
 

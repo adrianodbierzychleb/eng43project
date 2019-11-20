@@ -31,9 +31,17 @@ public class BasketTest {
         Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
     }
 
+    @Test
+    public void checkProceedToSummary(){
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
+    }
 
     @Test
     public void checkProceedToCheckout(){
-        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
+        automationPracticeSite.getBasket().addItemToBasket().proceedToSummary().proceedToCheckout();
     }
+
+    //#cart_quantity_up_3_13_0_237920
+    //#cart_quantity_up_2_7_0_237920
+    //#cart_quantity_up_3_13_0_237920 > span .checkTax()
 }

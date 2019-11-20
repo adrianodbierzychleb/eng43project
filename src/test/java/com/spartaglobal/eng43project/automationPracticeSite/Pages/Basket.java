@@ -43,9 +43,22 @@ public class Basket {
         return this;
     }
 
+    public Basket proceedToSummary(){
+        waitForElement();
+        driver.findElement(By.linkText("Proceed to checkout")).click();
+        return this;
+    }
+
     public Basket proceedToCheckout(){
         waitForElement();
         driver.findElement(By.linkText("Proceed to checkout")).click();
+        return this;
+    }
+
+    public Basket checkTax(){
+        waitForElement();
+        WebElement tax = driver.findElement(By.id("total_tax"));
+        System.out.println(tax.getText());
         return this;
     }
 

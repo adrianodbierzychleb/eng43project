@@ -30,12 +30,6 @@ Feature: Basket
     When I finish selecting items
     Then the tax and delivery costs will be displayed correctly
 
-  Scenario: As a user I want to see the original price of the
-  discounted items so that I know the difference.
-    Given I am at the summary page
-    When I finish selecting items
-    Then the discounted price of the items will be displayed correctly.
-
   Scenario: As a user I want to reduce the quantity of items
   in my basket so that I make changes before I finalise my purchase.
     Given that I am in the cart drop down
@@ -45,7 +39,7 @@ Feature: Basket
 
   Scenario: As a user I want to have an option to delete items from my cart summary
   so that I can get rid of an item if I change my mind.
-    Given i am in Woman Catalog page
+    Given i am in Women Catalog page
     And I have selected Products to the cart/basket
     When I click the delete button for a product which I don’t want
     Then It will remove the product from the cart/basket

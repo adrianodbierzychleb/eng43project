@@ -55,4 +55,24 @@ public class BasketTest {
     public void addMulitpleProductToCheckout(){
         automationPracticeSite.getBasket().goToWomanPage().selectMultipleProductToCart();
     }
+
+    @Test
+    public void addQuantityToProductInCheckout(){
+        automationPracticeSite.getBasket().goToWomanPage().increaseQuantityInSummary();
+    }
+
+    @Test
+    public void showCartDropDownMenu(){
+        automationPracticeSite.getBasket().goToWomanPage().goToCartDropDownMenu();
+    }
+
+    @Test
+    public void decreaseQuantityToProductInCheckout(){
+        automationPracticeSite.getBasket().goToWomanPage().decreaseQuantityInSummary();
+    }
+
+    @Test
+    public void removeProductsFromCart(){
+        automationPracticeSite.getBasket().goToWomanPage().removeProductFromCartDropDownMenu();
+    }
 }

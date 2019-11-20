@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -17,6 +19,7 @@ public class Basket {
     private NavigationPages navigationPages;
     private String basketUrl = "http://automationpractice.com/index.php?controller=order";
 //    private By printedDressQuickBuy = By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.last-item-of-tablet-line.first-item-of-mobile-line > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default > span");
+    private By addProduct3ID = By.xpath("//*[@id=\"center_column\"]/ul/li[3]/div/div[2]/div[2]/a[1]");
 
     public Basket(WebDriver driver) {
         this.driver = driver;
@@ -51,11 +54,10 @@ public class Basket {
         return this;
     }
 
- /*   public Basket addItemToBasket(){
-        goToHomePageURL();
-        driver.findElement(printedDressQuickBuy).click();
+    public Basket addItemToBasket(){
+        driver.findElement(addProduct3ID).click();
         return this;
-    }*/
+    }
 
     public Basket proceedToCheckout(){
         waitForElement();
@@ -74,29 +76,45 @@ public class Basket {
             else {
                 clickShoppingButton();
             }
+        }proceedToCheckout();
+        return this;
+    }
+
+
+
+    public Basket increaseQuantityInSummary(){
+
+        addItemToBasket().waitForElement().proceedToCheckout().waitForElement();
+        for (int i = 0; i < 11; i++) {
+            driver.findElement(By.id("cart_quantity_up_3_13_0_0")).click();
+            waitForElement();
         }
         return this;
     }
 
-    public Basket increaseQuantityInSummary(){
-        String[] quantity;
-
-        quantity = new String[7];
-
-        quantity[1] = String.valueOf(By.id("cart_quantity_up_1_1_0_0"));
-        quantity[2] = String.valueOf(By.id("cart_quantity_up_2_7_0_0"));
-        quantity[3] = String.valueOf(By.id("cart_quantity_up_3_13_0_0"));
-        quantity[4] = String.valueOf(By.id("cart_quantity_up_4_16_0_0"));
-        quantity[5] = String.valueOf(By.id("cart_quantity_up_5_19_0_0"));
-        quantity[6] = String.valueOf(By.id("cart_quantity_up_6_31_0_0"));
-        quantity[7] = String.valueOf(By.id("cart_quantity_up_7_34_0_0"));
+    public Basket decreaseQuantityInSummary(){
+//        addItemToBasket().waitForElement().proceedToCheckout().waitForElement();
+//        for (int i = 0; i < 5; i++) {
+//            driver.findElement(By.id("cart_quantity_up_3_13_0_0")).click();
+//            waitForElement();
+//        }
+        addItemToBasket().waitForElement().proceedToCheckout().waitForElement();
+        driver.findElement(By.id("cart_quantity_down_3_13_0_0")).click();
         return this;
     }
 
-    public Basket increaseTheQuantityOfProduct(){
-        selectMultipleProductToCart();
-        
+    public Basket goToCartDropDownMenu(){
+        addItemToBasket().waitForElement().clickShoppingButton().waitForElement();
+        Actions hold = new Actions(driver);
+        WebElement cart;
+        cart = driver.findElement(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a"));
+        hold.moveToElement(cart).clickAndHold().perform();
+        return this;
+    }
 
+    public Basket removeProductFromCartDropDownMenu(){
+        goToCartDropDownMenu().waitForElement();
+        driver.findElement(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > div > div > div > dl > dt:nth-child(1) > span > a")).click();
         return this;
     }
 

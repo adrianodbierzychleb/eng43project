@@ -42,8 +42,6 @@ Feature: Checkout
       When I proceed to go to the summary page
       And I want to remove an item before paying
       Then The item should be removed from the basket
-
-
-
+      
 
 

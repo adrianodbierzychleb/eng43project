@@ -65,4 +65,30 @@ public class CheckoutStepDefs {
     @Then("The item should be removed from the basket")
     public void theItemShouldBeRemovedFromTheBasket() {
     }
+
+    // log in once proceeding to the checkout 
+
+    @Given("I have added an item to the basket")
+    public void iHaveAddedAnItemToTheBasket() {
+    }
+
+    @And("I go to the basket via the checkout button")
+    public void iGoToTheBasketViaTheCheckoutButton() {
+    }
+
+    @And("I press the proceed to checkout button in the summary")
+    public void iPressTheProceedToCheckoutButtonInTheSummary() {
+    }
+
+    @And("I am not signed in")
+    public void iAmNotSignedIn() {
+    }
+
+    @When("I input my username password")
+    public void iInputMyUsernamePassword() {
+    }
+
+    @Then("I will be redirected  to the address form")
+    public void iWillBeRedirectedToTheAddressForm() {
+    }
 }

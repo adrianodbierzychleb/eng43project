@@ -60,5 +60,4 @@ public class HomePage {
         driver.findElement(ad45Link).click();
         return this;
     }
-
 }

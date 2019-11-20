@@ -62,8 +62,7 @@ Feature: Checkout
             When I want to change my delivery address
             And I press the button to change address
             Then I should be able to select a new address
-<<<<<<< HEAD
-=======
+
 
             @Outline
             Scenario: As a user I want to be able to change my billing address
@@ -72,4 +71,4 @@ Feature: Checkout
               When I press the change billing address button
               Then I should be able to alter my billing address
 
->>>>>>> checkout
+

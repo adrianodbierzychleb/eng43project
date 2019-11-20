@@ -23,13 +23,9 @@ public class Checkout {
         driver.findElement(addressUpdateButton).click();
         return this;
     }
-<<<<<<< HEAD
-}
-=======
 
     public Checkout clickBillingUpdateButton(){
         driver.findElement(billingUpdateButton).click();
         return this;
     }
 }
->>>>>>> checkout

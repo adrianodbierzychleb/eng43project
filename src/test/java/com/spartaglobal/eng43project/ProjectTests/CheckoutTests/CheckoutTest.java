@@ -16,10 +16,6 @@ public class CheckoutTest {
     @Before
     public void setup(){
 
-<<<<<<< HEAD
-=======
-
->>>>>>> checkout
         SeleniumConfig seleniumConfig = new SeleniumConfig("chrome", "C:\\Users\\Dana Korang-Awua\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     }

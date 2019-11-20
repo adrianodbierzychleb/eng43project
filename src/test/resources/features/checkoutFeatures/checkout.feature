@@ -35,6 +35,14 @@ Feature: Checkout
       | 02089       |
 
 
+    @Outline
+    Scenario: As a user I want to remove unwanted items from the basket
+      Given I have an account
+      And I want to pay for my order
+      When I proceed to go to the summary page
+      And I want to remove an item before paying
+      Then The item should be removed from the basket
+
 
 
 

@@ -15,7 +15,6 @@ public class CheckoutStepDefs {
     @Given("I have an account")
     public void i_have_an_account() {
         System.out.println("account working");
-        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
     }
 
     @When("I attempt to change my address before the delivery")
@@ -46,5 +45,21 @@ public class CheckoutStepDefs {
 
     @Then("I receive an error message")
     public void iReceiveAnErrorMessage() {
+    }
+
+    @And("I want to pay for my order")
+    public void iWantToPayForMyOrder() {
+    }
+
+    @When("I proceed to go to the summary page")
+    public void iProceedToGoToTheSummaryPage() {
+    }
+
+    @And("I want to remove an item before paying")
+    public void iWantToRemoveAnItemBeforePaying() {
+    }
+
+    @Then("The item should be removed from the basket")
+    public void theItemShouldBeRemovedFromTheBasket() {
     }
 }

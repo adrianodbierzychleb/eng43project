@@ -37,7 +37,10 @@ public class SignUpTest {
         site = new AutomationPracticeSite(chromeDriverConfig.getDriver());
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> checkout
     @AfterClass
     public static void teardown(){
         driver.close();

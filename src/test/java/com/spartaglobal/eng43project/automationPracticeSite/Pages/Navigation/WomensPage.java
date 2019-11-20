@@ -1,6 +1,9 @@
 package com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation;
 
+import com.spartaglobal.eng43project.automationPracticeSite.Pages.Basket;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WomensPage{
 
@@ -15,4 +18,5 @@ public class WomensPage{
         driver.navigate().to(womensPageURL);
         return this;
     }
+
 }

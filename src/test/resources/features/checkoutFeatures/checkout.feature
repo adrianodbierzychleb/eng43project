@@ -103,3 +103,17 @@ Feature: Checkout
                   Given I have proceeded to the shipping tab
                   When I click the terms and conditions box
                   Then I should be taken to the payment page
+
+              @Outline
+              Scenario: As I user I want the option to pay by bank wire
+                Given I click the pay by bank wire option
+                Then I should be taken to the order summary page where it will confirm that I have paid by bank wire
+                And I click the confirm button
+
+
+              @Outline
+              Scenario: As I user I want the option to pay by cheque
+                Given I click the pay by cheque option
+                Then I should be taken to the order summary page where it will confirm that I have paid by cheque
+                And I click the confirm button
+

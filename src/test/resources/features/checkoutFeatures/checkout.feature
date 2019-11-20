@@ -9,8 +9,8 @@ Feature: Checkout
         Given I am at the address page in the checkout
         When I click the update address button
         And I am taken to the page to change my address
-        And I change my "<address>"
-        And I change my "<city>"
+        And I change my address with "<address>"
+        And I change my city with "<city>"
         Then My delivery address should update
 
 
@@ -55,8 +55,6 @@ Feature: Checkout
           Then I will be redirected to a sign up page in order to create an account
 
 
-
-
           @Outline
           Scenario: As a user I want to be able to get my order delivered to a different address
             Given I have items in my basket
@@ -64,4 +62,13 @@ Feature: Checkout
             When I want to change my delivery address
             And I press the button to change address
             Then I should be able to select a new address
+
+
+            @Outline
+            Scenario: As a user I want to be able to change my billing address
+              Given I have items in my basket
+              And I want to proceed to pay
+              When I press the change billing address button
+              Then I should be able to alter my billing address
+
 

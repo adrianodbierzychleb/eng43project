@@ -12,11 +12,9 @@ import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-<<<<<<< HEAD
     private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Adrian Odbierzychleb\\Downloads\\chromedriver.exe");
-=======
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\BB\\chromedriver_win32\\chromedriver.exe");
->>>>>>> checkout
+
+
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
     /**
@@ -126,14 +124,14 @@ public class CheckoutStepDefs {
     public void iWillBeRedirectedToASignUpPageInOrderToCreateAnAccount() {
     }
 
-<<<<<<< HEAD
+
 
     // As a user I want to be able to get my order delivered to a different address
-=======
+
     /**
      *           Scenario: As a user I want to be able to get my order delivered to a different address
      */
->>>>>>> checkout
+
 
     @Given("I have items in my basket")
     public void iHaveItemsInMyBasket() {
@@ -161,9 +159,7 @@ public class CheckoutStepDefs {
         automationPracticeSite.getCheckout().clickDropDownMenu();
     }
 
-<<<<<<< HEAD
 
-=======
     /**
     * Scenario : I want to be able to change my billing address
      */
@@ -181,5 +177,5 @@ public class CheckoutStepDefs {
         String currentUrl = seleniumConfig.getDriver().getCurrentUrl();
         Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=237923",currentUrl);
     }
->>>>>>> checkout
+
 }

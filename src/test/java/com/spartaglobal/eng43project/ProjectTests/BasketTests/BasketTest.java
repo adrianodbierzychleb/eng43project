@@ -4,6 +4,11 @@ import com.spartaglobal.eng43project.SeleniumConfig.SeleniumConfig;
 import com.spartaglobal.eng43project.automationPracticeSite.AutomationPracticeSite;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Basket;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.NavigationPages;
+import io.cucumber.java.eo.Se;
+import org.junit.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 import io.cucumber.java.en_old.Ac;
 import io.cucumber.java.eo.Se;
 import org.junit.*;
@@ -15,6 +20,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class BasketTest {
 
     private static SeleniumConfig seleniumConfig;
@@ -22,9 +28,8 @@ public class BasketTest {
     private static NavigationPages navigationPages;
 
     @BeforeClass
-    public static void setup(){
+    public static void setup() {
         // TODO: 18/11/2019 Change the driverPath to your own path!
-//        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Anis Subba\\Downloads\\chromedriver_win32\\chromedriver.exe");
         seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navigationPages = new NavigationPages(seleniumConfig.getDriver());
@@ -35,17 +40,25 @@ public class BasketTest {
         seleniumConfig.getDriver().close();
     }*/
 
+
     @Test
-    public void checkUrlIsOpened(){
-        Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
+    public void checkUrlIsOpened() {
+        Assert.assertEquals("http://automationpractice.com/index.php?controller=order", seleniumConfig.getDriver().getCurrentUrl());
+    }
+    @Test
+    public void goToDressSite() {
+        automationPracticeSite.getBasket().goToProceedToCheckout().getQuantity("10");
+        Assert.assertNotEquals(automationPracticeSite.getBasket().grandTotalString,
+                automationPracticeSite.getBasket().totalWithoutTaxString);
     }
 
     @Test
     public void checkProceedToSummary() {
         automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
     }
+
     @Test
-    public void goToWomanHomePage(){
+    public void goToWomanHomePage() {
         navigationPages.womensPage().goToWomensPage();
     }
 
@@ -55,13 +68,14 @@ public class BasketTest {
     }
 
     @Test
-    public void checkProceedToCheckout(){
+    public void checkProceedToCheckout() {
         automationPracticeSite.getBasket().addItemToBasket().proceedToSummary().proceedToCheckout();
     }
 
     @Test
-    public void addMulitpleProductToCheckout(){
+    public void addMulitpleProductToCheckout() {
         automationPracticeSite.getBasket().selectMultipleProductToCart();
+
     }
 
     @Test
@@ -69,3 +83,5 @@ public class BasketTest {
         automationPracticeSite.getBasket().goToHomePageURL().waitForElement().moveToCartMenu();
     }
 }
+
+

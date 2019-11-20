@@ -16,6 +16,7 @@ public class Checkout {
 
     private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
 
+    private By saveAddressChanges = By.id("submitAddress");
 
     public Checkout(WebDriver driver) {
         this.driver = driver;
@@ -58,4 +59,8 @@ public class Checkout {
         return this;
     }
 
+    public Checkout clickSaveAddressButton(){
+        driver.findElement(saveAddressChanges).click();
+        return this;
+    }
 }

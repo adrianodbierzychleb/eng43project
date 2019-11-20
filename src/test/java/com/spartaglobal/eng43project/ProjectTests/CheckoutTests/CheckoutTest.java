@@ -15,13 +15,25 @@ public class CheckoutTest {
 
     @Before
     public void setup(){
-        SeleniumConfig seleniumConfig = new SeleniumConfig("chrome", "C:\\\\Users\\\\Adrian Odbierzychleb\\\\Downloads\\\\chromedriver.exe");
+        SeleniumConfig seleniumConfig = new SeleniumConfig("chrome", "C:\\Users\\Fabio Fernandes\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     }
 
 
+
+//    @Test
+//    public void shouldGoToCheckout() throws Exception{
+//        automationPracticeSite.getCheckout().goToCheckoutURL().login();
+//     }
+
     @Test
     public void shouldGoToCheckout() throws Exception{
-        automationPracticeSite.getCheckout().goToCheckoutURL().login();
+        automationPracticeSite.getCheckout().goToCheckoutURL();
      }
+
+     @Test
+    public void addItemToBasketAndCheckout(){
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout();
+     }
+
 }

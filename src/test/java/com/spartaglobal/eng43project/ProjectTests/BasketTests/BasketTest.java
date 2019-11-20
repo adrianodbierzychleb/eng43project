@@ -19,10 +19,10 @@ public class BasketTest {
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     }
 
-    @AfterClass
-    public static void teardown(){
-        seleniumConfig.getDriver().close();
-    }
+//    @AfterClass
+//    public static void teardown(){
+//        seleniumConfig.getDriver().close();
+//    }
 
     @Test
     public void checkUrlIsOpened(){
@@ -31,10 +31,6 @@ public class BasketTest {
         Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
     }
 
-    @Test
-    public void checkCanAddItem(){
-        automationPracticeSite.getBasket().addItemToBasket();
-    }
 
     @Test
     public void checkProceedToCheckout(){

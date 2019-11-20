@@ -66,3 +66,10 @@ Feature: Checkout
             And I press the button to change address
             Then I should be able to select a new address
 
+            @Outline
+            Scenario: As a user I want to be able to change my billing address
+              Given I have items in my basket
+              And I want to proceed to pay
+              When I press the change billing address button
+              Then I should be able to alter my billing address
+

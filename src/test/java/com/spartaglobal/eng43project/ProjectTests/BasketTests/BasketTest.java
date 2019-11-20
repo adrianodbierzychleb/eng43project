@@ -7,6 +7,7 @@ import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.Nav
 import io.cucumber.java.eo.Se;
 import org.junit.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class BasketTest {
 
@@ -17,12 +18,11 @@ public class BasketTest {
     @BeforeClass
     public static void setup() {
         // TODO: 18/11/2019 Change the driverPath to your own path!
-<<<<<<< HEAD
-        seleniumConfig = new SeleniumConfig("chrome", "C:\\Users\\NGeorgiev\\Downloads\\chromedriver_win32\\chromedriver.exe");
-=======
-        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
 
->>>>>>> basket
+        seleniumConfig = new SeleniumConfig("chrome", "C:\\Users\\NGeorgiev\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
+        //seleniumConfig = new SeleniumConfig("chrome", "C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navigationPages = new NavigationPages(seleniumConfig.getDriver());
     }
@@ -31,7 +31,7 @@ public class BasketTest {
 //    public static void teardown(){
 //        seleniumConfig.getDriver().close();
 //    }
-<<<<<<< HEAD
+
 
 //    @Test
 //    public void checkUrlIsOpened(){
@@ -41,23 +41,23 @@ public class BasketTest {
 
     @Test
     public void goToDressSite() {
-        automationPracticeSite.getBasket().goToProceedToCheckout().getQuantity("00");
-
-
-=======
-
-    @Test
-    public void checkUrlIsOpened(){
-        automationPracticeSite.getBasket().goToBasketURL();
-        automationPracticeSite.getBasket().addItemToBasket().goToBasketURL().proceedToCheckout();
-        Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
->>>>>>> basket
+        automationPracticeSite.getBasket().goToProceedToCheckout().getQuantity("10");
+        Assert.assertNotEquals(automationPracticeSite.getBasket().grandTotalString, automationPracticeSite.getBasket().totalWithoutTaxString );
     }
 
+//    @Test
+//    public void checkUrlIsOpened() {
+//        automationPracticeSite.getBasket().goToBasketURL();
+//        automationPracticeSite.getBasket().addItemToBasket().goToBasketURL().proceedToCheckout();
+//        Assert.assertEquals("http://automationpractice.com/index.php?controller=order", seleniumConfig.getDriver().getCurrentUrl());
+//
+//        }
 
-    @Test
-    public void checkProceedToCheckout(){
-        automationPracticeSite.getBasket().proceedToCheckout();
+
+//    @Test
+//    public void checkProceedToCheckout () {
+//        automationPracticeSite.getBasket().proceedToCheckout();
+//        }
     }
-}
+
 

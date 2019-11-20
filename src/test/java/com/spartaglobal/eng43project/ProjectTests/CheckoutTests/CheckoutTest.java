@@ -46,4 +46,26 @@ public class CheckoutTest {
          automationPracticeSite.getCheckout().clickDropDownMenu().selectAddressFromDropDown();
       }
 
+
+    @Test
+    public void shouldClickAddAddressButton(){
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+        automationPracticeSite.getCheckout().clickAddNewAddressButton();
+    }
+
+    @Test
+    public void shouldAddComment() throws Exception{
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+        automationPracticeSite.getCheckout().fillInCommentBox();
+     }
+
+     @Test
+    public void shouldTickTC() throws Exception{
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
+        automationPracticeSite.getCheckout().clickProceedToCheckoutAddress();
+        automationPracticeSite.getCheckout().agreeTermsConditions();
+     }
 }

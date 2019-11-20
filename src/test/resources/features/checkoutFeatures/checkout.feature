@@ -6,8 +6,8 @@ Feature: Checkout
   #Scenario 51
   @outline
   Scenario Outline: If I want to update my delivery address I will be able to do so
-        Given I have an account
-        When I attempt to change my address before the delivery
+        Given I am at the address page in the checkout
+        When I click the update address button
         And I am taken to the page to change my address
         And I change my "<address>"
         And I change my "<city>"
@@ -22,10 +22,10 @@ Feature: Checkout
   #Scenario 51
   @outline
   Scenario Outline: If I input an incorrect phone format then I will receive an error
-        Given I have an account
-        When I attempt to change my address before the delivery
+        Given I am at the address page in the checkout
+        When I click the update address button
         And I am taken to the page to change my address
-        And I change my <phone number>
+        And I change my <phone number> with an incorrect format
         Then I receive an error message
     Examples:
       | phone number |
@@ -33,15 +33,6 @@ Feature: Checkout
       |0208940233  |
       | 0208940     |
       | 02089       |
-
-
-    @Outline
-    Scenario: As a user I want to remove unwanted items from the basket
-      Given I have an account
-      And I want to pay for my order
-      When I proceed to go to the summary page
-      And I want to remove an item before paying
-      Then The item should be removed from the basket
 
 
       @Outline
@@ -65,4 +56,12 @@ Feature: Checkout
 
 
 
+
+          @Outline
+          Scenario: As a user I want to be able to get my order delivered to a different address
+            Given I have items in my basket
+            And I want to proceed to pay
+            When I want to change my delivery address
+            And I press the button to change address
+            Then I should be able to select a new address
 

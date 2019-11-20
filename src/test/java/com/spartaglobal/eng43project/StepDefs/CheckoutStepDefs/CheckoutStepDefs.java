@@ -91,4 +91,17 @@ public class CheckoutStepDefs {
     @Then("I will be redirected  to the address form")
     public void iWillBeRedirectedToTheAddressForm() {
     }
+
+    @And("I do not own an account")
+    public void iDoNotOwnAnAccount() {
+        
+    }
+
+    @When("I press sign up button")
+    public void iPressSignUpButton() {
+    }
+
+    @Then("I will be redirected to a sign up page in order to create an account")
+    public void iWillBeRedirectedToASignUpPageInOrderToCreateAnAccount() {
+    }
 }

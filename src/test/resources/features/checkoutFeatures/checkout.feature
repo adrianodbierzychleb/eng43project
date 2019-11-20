@@ -43,6 +43,7 @@ Feature: Checkout
       And I want to remove an item before paying
       Then The item should be removed from the basket
 
+
       @Outline
       Scenario: As a user I want to be able to log in so that I can proceed to checkout
         Given I have added an item to the basket
@@ -52,6 +53,16 @@ Feature: Checkout
         When I input my username password
         Then I will be redirected  to the address form
 
+
+
+        @Outline
+        Scenario: As a user I want to be able to sign up in order to proceed with the order
+          Given I have added an item to the basket
+          And I go to the basket via the checkout button
+          And I press the proceed to checkout button in the summary
+          And I do not own an account
+          When I press sign up button
+          Then I will be redirected to a sign up page in order to create an account
 
 
 

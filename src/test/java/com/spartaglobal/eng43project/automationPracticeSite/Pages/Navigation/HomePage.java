@@ -14,7 +14,6 @@ public class HomePage {
     private WebDriver driver;
     private By ad25Link = By.xpath("/html/body/div/div[2]/div/div[1]/div/div[2]/ul/li[1]/a/img");
     private By ad45Link = By.xpath("/html/body/div/div[2]/div/div[1]/div/div[2]/ul/li[2]/a/img");
-   // private By bottomAds = By.cssSelector("#htmlcontent_home > ul");
     private By topTrendsLink = By.xpath("/html/body/div/div[2]/div/div[2]/div/div[2]/div[1]/ul/li[1]/a/img");
     private By mensCoatLink = By.xpath("/html/body/div/div[2]/div/div[2]/div/div[2]/div[1]/ul/li[2]/a/img");
     private By womensCoatLink = By.xpath("/html/body/div/div[2]/div/div[2]/div/div[2]/div[1]/ul/li[3]/a/img");

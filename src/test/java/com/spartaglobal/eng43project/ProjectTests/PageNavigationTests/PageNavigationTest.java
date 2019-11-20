@@ -2,6 +2,8 @@ package com.spartaglobal.eng43project.ProjectTests.PageNavigationTests;
 
 import com.spartaglobal.eng43project.SeleniumConfig.SeleniumConfig;
 import com.spartaglobal.eng43project.automationPracticeSite.AutomationPracticeSite;
+import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.ContactUsPage;
+import gherkin.deps.com.google.gson.internal.$Gson$Preconditions;
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.NavBar;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -17,20 +19,21 @@ public class PageNavigationTest {
 
     private static SeleniumConfig seleniumConfig;
     private static AutomationPracticeSite automationPracticeSite;
+    private static ContactUsPage contactUsPage;
     private static NavBar navBar;
 
     @BeforeClass
     public static void setup(){
         // TODO: 18/11/2019 Change the driverPath to your own path!
-        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\IYotova\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\SHoque\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navBar = new NavBar(seleniumConfig.getDriver());
     }
 
-    @AfterClass
-    public static void teardown(){
-        seleniumConfig.getDriver().close();
-    }
+//    @AfterClass
+//    public static void teardown(){
+//        seleniumConfig.getDriver().close();
+//    }
 
     @Test
     public void checkUrlIsOpened(){

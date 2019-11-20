@@ -11,10 +11,10 @@ Feature: As a user I want to be able to navigate from the homepage to the variou
 
     Examples:
     |ad|
-    |25Off|
-    |45Off|
-    |Top trends|
-    |Men's Coats|
-    |Women's Coats|
-    |Sunglasses|
-    |Handbags|
+    |25 Off ad|
+    |45 Off ad|
+    |Top trends ad|
+    |Men's Coats ad|
+    |Women's Coats ad|
+    |Sunglasses ad|
+    |Handbags ad|

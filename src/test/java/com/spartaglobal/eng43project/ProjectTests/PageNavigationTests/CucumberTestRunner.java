@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         plugin={"pretty"},
        // tags = {"@ads"},
         features = "classpath:features/pageNavigationFeatures/ads.feature",
-        glue = "com.spartaglobal.StepDefs.PageNavigationStepDefs.AdsStepDefs"
+        glue = "com.spartaglobal.eng43project.StepDefs.PageNavigationStepDefs.AdsStepDefs"
 )
 
 public class CucumberTestRunner

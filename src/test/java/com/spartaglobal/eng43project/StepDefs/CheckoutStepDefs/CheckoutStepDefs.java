@@ -128,10 +128,13 @@ public class CheckoutStepDefs {
 
     @Given("I have items in my basket")
     public void iHaveItemsInMyBasket() {
+        automationPracticeSite.getBasket().addItemToBasket();
     }
 
     @And("I want to proceed to pay")
     public void iWantToProceedToPay() {
+        automationPracticeSite.getBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
     }
 
     @When("I want to change my delivery address")

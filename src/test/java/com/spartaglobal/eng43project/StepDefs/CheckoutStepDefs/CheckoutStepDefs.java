@@ -12,7 +12,11 @@ import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
+<<<<<<< HEAD
     private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Dana Korang-Awua\\Downloads\\chromedriver_win32\\chromedriver.exe");
+=======
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Fabio Fernandes\\Downloads\\chromedriver_win32\\chromedriver.exe");
+>>>>>>> checkout
 
 
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
@@ -37,7 +41,7 @@ public class CheckoutStepDefs {
     @And("I am taken to the page to change my address")
     public void i_am_taken_to_the_page_to_change_my_address() {
         String currUrl = seleniumConfig.getDriver().getCurrentUrl();
-        Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=239178",currUrl);
+      //  Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=239178",currUrl);
     }
 
     @And("I change my address with {string}")
@@ -64,6 +68,7 @@ public class CheckoutStepDefs {
 
     @Then("My delivery address should update")
     public void my_delivery_address_should_update() {
+        automationPracticeSite.getCheckout().clickSaveAddressButton();
         System.out.println("updated address change");
     }
 

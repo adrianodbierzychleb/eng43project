@@ -13,16 +13,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Signup {
 
-<<<<<<< HEAD
 
-
-
-    private WebDriver driver;
-=======
     public WebDriver driver;
  //   public WebDriverWait webDriverWait;
 
->>>>>>> signUp
     private String signUpURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     private By emailFieldID = By.id("email_create");
     private By AccountexistsErrorID = By.id("create_account_error");
@@ -114,9 +108,6 @@ public class Signup {
         return this;
     }
 
-<<<<<<< HEAD
-
-=======
     public Signup inputAdditionalInfoIntoYourAddressSection(String additionalInfo) {
         driver.findElement(yourAddressFirstNameFieldID).sendKeys(additionalInfo);
         return this;
@@ -145,6 +136,5 @@ public class Signup {
     public void waiting(){
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
->>>>>>> signUp
 }
 

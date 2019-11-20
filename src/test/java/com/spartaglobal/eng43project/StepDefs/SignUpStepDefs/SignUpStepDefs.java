@@ -10,10 +10,6 @@ import org.openqa.selenium.WebDriver;
 public class SignUpStepDefs {
 
     // TODO: 18/11/2019  Change your driver path to your own path!
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> checkout
     private static SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
     private static AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
     private static Signup signup;
@@ -22,19 +18,10 @@ public class SignUpStepDefs {
     public static void setup() {
         signup = new Signup(seleniumConfig.getDriver());
         automationPracticeSite.getSignup().goToSignUpURL();
-<<<<<<< HEAD
-=======
-   // private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
-  //  private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
 
-
-    public static SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Pawel Misiura\\Downloads\\chromedriver_win32\\chromedriver.exe");
-    public static AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
->>>>>>> signUp
-=======
+        // private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        //  private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());}
     }
->>>>>>> checkout
-
 
     @Given("that I am on the create account page")
     public void that_I_am_on_the_create_account_page() {

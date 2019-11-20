@@ -33,8 +33,18 @@ public class CheckoutStepDefs {
         System.out.println("ability to change the address");
     }
 
+    @And("I change my {int}")
+    public void i_change_my(Integer int1) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
     @Then("My delivery address should update")
     public void my_delivery_address_should_update() {
         System.out.println("updated address change");
+    }
+
+    @Then("I receive an error message")
+    public void iReceiveAnErrorMessage() {
     }
 }

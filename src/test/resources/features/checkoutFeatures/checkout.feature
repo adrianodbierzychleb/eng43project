@@ -54,7 +54,6 @@ Feature: Checkout
         Then I will be redirected  to the address form
 
 
-
         @Outline
         Scenario: As a user I want to be able to sign up in order to proceed with the order
           Given I have added an item to the basket

@@ -30,6 +30,8 @@ public class Basket {
 
     private By checkoutButtonID = By.linkText("Proceed to checkout");
     private By continueToShoppingID = By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span");
+    private By summaryProduct3AddButtonID = By.id("cart_quantity_up_3_13_0_0");
+    private By summaryProduct3SubtractButtonID = By.id("cart_quantity_down_3_13_0_0");
 
 
     public Basket(WebDriver driver) {
@@ -123,11 +125,9 @@ public class Basket {
         }
 
         public Basket selectMultipleProductToCart () {
-            WebElement from;
-            goToWomanPage();
-            Actions action = new Actions(driver);
+        WebElement from;
             for (int i = 1; i < 8; i++) {
-                from = driver.findElement(By.cssSelector("#center_column > ul > li:nth-child(" + i + ") > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default"));
+                from = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/div[2]/a[1]"));
                 from.click();
                 if (i == 7) {
                     processToCheckout();
@@ -137,5 +137,38 @@ public class Basket {
             }
             return this;
         }
+
+    public Basket increaseQuantityInSummary(){
+
+        addItemToBasket().waitForElement().proceedToCheckout().waitForElement();
+        for (int i = 0; i < 11; i++) {
+            driver.findElement(summaryProduct3AddButtonID).click();
+            waitForElement();
+        }
+        return this;
     }
+
+    public Basket decreaseQuantityInSummary(){
+        addItemToBasket().waitForElement().proceedToCheckout().waitForElement();
+        driver.findElement(summaryProduct3SubtractButtonID).click();
+        return this;
+    }
+
+    public Basket goToCartDropDownMenu(){
+        addItemToBasket().waitForElement().clickShoppingButton().waitForElement();
+        Actions hold = new Actions(driver);
+        WebElement cart;
+        cart = driver.findElement(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a"));
+        hold.moveToElement(cart).clickAndHold().perform();
+        return this;
+    }
+
+
+    public Basket removeProductFromCartDropDownMenu(){
+        goToCartDropDownMenu().waitForElement();
+        driver.findElement(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > div > div > div > dl > dt:nth-child(1) > span > a")).click();
+        return this;
+    }
+
+}
 

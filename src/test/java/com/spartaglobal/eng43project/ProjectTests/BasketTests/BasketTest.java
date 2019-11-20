@@ -32,7 +32,7 @@ public class BasketTest {
         // TODO: 18/11/2019 Change the driverPath to your own path!
 
 
-        seleniumConfig = new SeleniumConfig("chrome", "C:\\Users\\NGeorgiev\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        seleniumConfig = new SeleniumConfig("chrome", "C:\\Users\\Anis Subba\\OneDrive - Sparta Global Limited\\Engineering43\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navigationPages = new NavigationPages(seleniumConfig.getDriver());
     }
@@ -83,7 +83,7 @@ public class BasketTest {
 
     @Test
     public void addMultipleItemInCart() {
-        automationPracticeSite.getBasket().processToCheckout();
+        automationPracticeSite.getBasket().goToWomanPage().processToCheckout();
     }
 
     @Test
@@ -93,9 +93,30 @@ public class BasketTest {
 
     @Test
     public void addMulitpleProductToCheckout() {
-        automationPracticeSite.getBasket().selectMultipleProductToCart();
+        automationPracticeSite.getBasket().goToWomanPage().selectMultipleProductToCart();
 
     }
+
+    @Test
+    public void addQuantityToProductInCheckout(){
+        automationPracticeSite.getBasket().goToWomanPage().increaseQuantityInSummary();
+    }
+
+    @Test
+    public void showCartDropDownMenu(){
+        automationPracticeSite.getBasket().goToWomanPage().goToCartDropDownMenu();
+    }
+
+    @Test
+    public void decreaseQuantityToProductInCheckout(){
+        automationPracticeSite.getBasket().goToWomanPage().decreaseQuantityInSummary();
+    }
+
+    @Test
+    public void removeProductsFromCart(){
+        automationPracticeSite.getBasket().goToWomanPage().removeProductFromCartDropDownMenu();
+    }
+
 }
 
 

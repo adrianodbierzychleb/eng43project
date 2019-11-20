@@ -37,17 +37,11 @@ public class SignUpTest {
         site = new AutomationPracticeSite(chromeDriverConfig.getDriver());
     }
 
-<<<<<<< HEAD
+
     @AfterClass
     public static void teardown(){
         driver.close();
     }
-=======
-//    @AfterClass
-//    public static void teardown(){
-//        site.closeDriver();
-//    }
->>>>>>> signUp
 
     @Test
     public void emailAccountExists() {

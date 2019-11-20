@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class Checkout {
 
-
-
     private WebDriver driver;
     private String checkoutUrl = "http://automationpractice.com/index.php";
     private By addressUpdateButton = By.xpath("//*[@id=\"address_invoice\"]/li[7]/a");

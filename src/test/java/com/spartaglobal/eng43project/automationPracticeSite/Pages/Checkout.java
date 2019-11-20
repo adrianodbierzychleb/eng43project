@@ -53,7 +53,7 @@ public class Checkout {
         return this;
     }
 
-    public Checkout clickDeliveryAddAddressButton() {
+    public Checkout clickAddNewAddressButton() {
         driver.findElement(addNewAddressButton).click();
         return this;
     }

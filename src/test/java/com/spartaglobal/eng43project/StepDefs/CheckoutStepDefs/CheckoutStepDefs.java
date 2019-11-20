@@ -47,4 +47,20 @@ public class CheckoutStepDefs {
     @Then("I receive an error message")
     public void iReceiveAnErrorMessage() {
     }
+
+    @And("I want to pay for my order")
+    public void iWantToPayForMyOrder() {
+    }
+
+    @When("I proceed to go to the summary page")
+    public void iProceedToGoToTheSummaryPage() {
+    }
+
+    @And("I want to remove an item before paying")
+    public void iWantToRemoveAnItemBeforePaying() {
+    }
+
+    @Then("The item should be removed from the basket")
+    public void theItemShouldBeRemovedFromTheBasket() {
+    }
 }

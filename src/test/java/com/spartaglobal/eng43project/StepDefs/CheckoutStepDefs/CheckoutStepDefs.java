@@ -100,7 +100,7 @@ public class CheckoutStepDefs {
 
     @And("I do not own an account")
     public void iDoNotOwnAnAccount() {
-        
+
     }
 
     @When("I press sign up button")
@@ -109,5 +109,25 @@ public class CheckoutStepDefs {
 
     @Then("I will be redirected to a sign up page in order to create an account")
     public void iWillBeRedirectedToASignUpPageInOrderToCreateAnAccount() {
+    }
+
+    @Given("I have items in my basket")
+    public void iHaveItemsInMyBasket() {
+    }
+
+    @And("I want to proceed to pay")
+    public void iWantToProceedToPay() {
+    }
+
+    @When("I want to change my delivery address")
+    public void iWantToChangeMyDeliveryAddress() {
+    }
+
+    @And("I press the button to change address")
+    public void iPressTheButtonToChangeAddress() {
+    }
+
+    @Then("I should be able to select a new address")
+    public void iShouldBeAbleToSelectANewAddress() {
     }
 }

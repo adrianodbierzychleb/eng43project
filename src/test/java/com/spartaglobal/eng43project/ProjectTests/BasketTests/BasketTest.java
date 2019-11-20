@@ -24,6 +24,7 @@ public class BasketTest {
     public static void setup() {
         // TODO: 18/11/2019 Change the driverPath to your own path!
         seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Anis Subba\\OneDrive - Sparta Global Limited\\Engineering43\\chromedriver_win32\\chromedriver.exe");
+
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navigationPages = new NavigationPages(seleniumConfig.getDriver());
     }
@@ -33,34 +34,12 @@ public class BasketTest {
         seleniumConfig.getDriver().close();
     }*/
 
-
-//    @Test
-//    public void checkUrlIsOpened(){
-//        automationPracticeSite.getBasket().goToBasketURL();
-//        Assert.assertEquals("http://automationpractice.com/index.php?controller=order",seleniumConfig.getDriver().getCurrentUrl());
-//    }
-//hi this is an edit
     
     @Test
     public void goToDressSite() {
         automationPracticeSite.getBasket().goToProceedToCheckout().getQuantity("10");
         Assert.assertNotEquals(automationPracticeSite.getBasket().grandTotalString, automationPracticeSite.getBasket().totalWithoutTaxString);
     }
-
-
-//    @Test
-//    public void checkUrlIsOpened() {
-//        automationPracticeSite.getBasket().goToBasketURL();
-//        automationPracticeSite.getBasket().addItemToBasket().goToBasketURL().proceedToCheckout();
-//        Assert.assertEquals("http://automationpractice.com/index.php?controller=order", seleniumConfig.getDriver().getCurrentUrl());
-//
-//        }
-
-
-//    @Test
-//    public void checkProceedToCheckout () {
-//        automationPracticeSite.getBasket().proceedToCheckout();
-//        }
 
     @Test
     public void checkProceedToSummary() {
@@ -102,6 +81,7 @@ public class BasketTest {
         automationPracticeSite.getBasket().goToWomanPage().removeProductFromCartDropDownMenu();
     }
 
+    @Test
     public void checkProceedToCheckout() {
         automationPracticeSite.getBasket().addItemToBasket().proceedToSummary().proceedToCheckout();
     }

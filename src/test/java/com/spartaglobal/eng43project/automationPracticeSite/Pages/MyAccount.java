@@ -37,9 +37,9 @@ public class MyAccount {
         return this;
     }
 
-    public MyAccount loginInToAccount(){
-        driver.findElement(emailTextBox).sendKeys("eng43@test.com");
-        driver.findElement(passwordTextBox).sendKeys("spartaglobal");
+    public MyAccount loginInToAccount(String email, String password){
+        driver.findElement(emailTextBox).sendKeys(email);
+        driver.findElement(passwordTextBox).sendKeys(password);
         driver.findElement(submitLoginButton).click();
         return this;
     }

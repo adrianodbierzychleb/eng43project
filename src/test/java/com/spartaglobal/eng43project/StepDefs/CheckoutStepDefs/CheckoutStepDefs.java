@@ -32,10 +32,10 @@ public class CheckoutStepDefs {
         System.out.println("ability to change the address");
     }
 
+    // part of phone number scenario
     @And("I change my {int}")
     public void i_change_my(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        System.out.println("the number will be changed ");
     }
 
     @Then("My delivery address should update")
@@ -43,9 +43,12 @@ public class CheckoutStepDefs {
         System.out.println("updated address change");
     }
 
+
     @Then("I receive an error message")
     public void iReceiveAnErrorMessage() {
     }
+
+    // removing an item scenario additions 
 
     @And("I want to pay for my order")
     public void iWantToPayForMyOrder() {
@@ -61,5 +64,31 @@ public class CheckoutStepDefs {
 
     @Then("The item should be removed from the basket")
     public void theItemShouldBeRemovedFromTheBasket() {
+    }
+
+    // log in once proceeding to the checkout 
+
+    @Given("I have added an item to the basket")
+    public void iHaveAddedAnItemToTheBasket() {
+    }
+
+    @And("I go to the basket via the checkout button")
+    public void iGoToTheBasketViaTheCheckoutButton() {
+    }
+
+    @And("I press the proceed to checkout button in the summary")
+    public void iPressTheProceedToCheckoutButtonInTheSummary() {
+    }
+
+    @And("I am not signed in")
+    public void iAmNotSignedIn() {
+    }
+
+    @When("I input my username password")
+    public void iInputMyUsernamePassword() {
+    }
+
+    @Then("I will be redirected  to the address form")
+    public void iWillBeRedirectedToTheAddressForm() {
     }
 }

@@ -22,46 +22,46 @@ public class MyAccountTests {
 
     @Test
     public void shouldLogin() throws Exception{
-        automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount();
+        automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount("eng43@test.com","spartaglobal");
      }
 
 
      @Test
      public void shouldGoToOrderHistory() throws Exception{
 
-        automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount().goToOrderHistoryDetails();
+        automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount("eng43@test.com","spartaglobal").goToOrderHistoryDetails();
 
       }
       @Test
      public void shouldGoToPersonalInfo() throws Exception{
 
-        automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount().goToMyPersonalInfo();
+        automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount("eng43@test.com","spartaglobal").goToMyPersonalInfo();
       }
 
 
       @Test
       public void shouldGoToUpdateAddress() throws Exception{
-          automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount().goToMyAddres();
+          automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount("eng43@test.com","spartaglobal").goToMyAddres();
        }
 
        @Test
        public void shouldGoToCreditSlip() throws Exception{
-           automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount().goToMyCreditSlips();
+           automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount("eng43@test.com","spartaglobal").goToMyCreditSlips();
         }
 
         @Test
         public void shouldGoToHomePage() throws Exception{
-            automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount().goToHome();
+            automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount("eng43@test.com","spartaglobal").goToHome();
          }
 
          @Test
          public void shouldGoToMyWishList() throws Exception{
-             automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount().goToMywhishList();
+             automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount("eng43@test.com","spartaglobal").goToMywhishList();
           }
 
           @Test
           public void shouldLogOffAccount() throws Exception{
-              automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount().logoutOfAccount();
+              automationPracticeSite.getMyAccount().goToHomepage().goToSignIn().loginInToAccount("eng43@test.com","spartaglobal").logoutOfAccount();
            }
 
 }

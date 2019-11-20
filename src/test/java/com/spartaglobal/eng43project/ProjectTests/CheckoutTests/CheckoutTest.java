@@ -27,8 +27,9 @@ public class CheckoutTest {
 //     }
 
     @Test
-    public void shouldGoToCheckout() throws Exception{
-        automationPracticeSite.getCheckout().goToCheckoutURL();
+    public void shouldGoToCheckoutAndSignIn() {
+        automationPracticeSite.getBasket().addItemToBasket().proceedToCheckout().proceedToSummary();
+        automationPracticeSite.getMyAccount().loginInToAccount("eng43@test.com","spartaglobal");
      }
 
      @Test

@@ -147,7 +147,6 @@ public class Basket {
     }
 
     public Basket increaseQuantityInSummary(){
-
         addItemToBasket().waitForElement().proceedToCheckout().waitForElement();
         for (int i = 0; i < 11; i++) {
             driver.findElement(summaryProduct3AddButtonID).click();
@@ -178,5 +177,4 @@ public class Basket {
         return this;
     }
 }
-
 

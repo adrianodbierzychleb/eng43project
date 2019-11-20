@@ -23,11 +23,8 @@ public class BasketTest {
     @BeforeClass
     public static void setup() {
         // TODO: 18/11/2019 Change the driverPath to your own path!
-<<<<<<< HEAD
         seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Edward James\\Downloads\\chromedriver_win32\\chromedriver.exe");
-=======
-        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Anis Subba\\OneDrive - Sparta Global Limited\\Engineering43\\chromedriver_win32\\chromedriver.exe");
->>>>>>> basket
+
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navigationPages = new NavigationPages(seleniumConfig.getDriver());
     }
@@ -42,6 +39,7 @@ public class BasketTest {
     public void checkUrlIsOpened() {
         Assert.assertEquals("http://automationpractice.com/index.php?controller=order", seleniumConfig.getDriver().getCurrentUrl());
     }
+
     @Test
     public void goToDressSite() {
         automationPracticeSite.getBasket().goToProceedToCheckout().getQuantity("10");
@@ -88,17 +86,16 @@ public class BasketTest {
         automationPracticeSite.getBasket().goToWomanPage().removeProductFromCartDropDownMenu();
     }
 
+    @Test
     public void checkProceedToCheckout() {
         automationPracticeSite.getBasket().addItemToBasket().proceedToSummary().proceedToCheckout();
     }
 
-<<<<<<< HEAD
     @Test
     public void checkCartMenu(){
         automationPracticeSite.getBasket().goToHomePageURL().waitForElement().moveToCartMenu();
     }
-=======
->>>>>>> basket
+
 }
 
 

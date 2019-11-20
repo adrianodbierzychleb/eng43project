@@ -12,6 +12,7 @@ import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
+    
 
     private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Dana Korang-Awua\\Downloads\\chromedriver_win32\\chromedriver.exe");
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
@@ -111,17 +112,16 @@ public class CheckoutStepDefs {
      *         Scenario: As a user I want to be able to sign up in order to proceed with the order
      */
 
-    @And("I do not own an account")
-    public void iDoNotOwnAnAccount() {
-
-    }
 
     @When("I press sign up button")
     public void iPressSignUpButton() {
+        automationPracticeSite.getSignup().inputEmail("test4321@test.com");
+        automationPracticeSite.getSignup().clickCreateAccountButton();
     }
 
     @Then("I will be redirected to a sign up page in order to create an account")
     public void iWillBeRedirectedToASignUpPageInOrderToCreateAnAccount() {
+        System.out.println("in signup");
     }
 
 

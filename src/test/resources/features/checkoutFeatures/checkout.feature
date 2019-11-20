@@ -58,3 +58,11 @@ Feature: Checkout
 
 
 
+          @Outline
+          Scenario: As a user I want to be able to get my order delivered to a different address
+            Given I have items in my basket
+            And I want to proceed to pay
+            When I want to change my delivery address
+            And I press the button to change address
+            Then I should be able to select a new address
+

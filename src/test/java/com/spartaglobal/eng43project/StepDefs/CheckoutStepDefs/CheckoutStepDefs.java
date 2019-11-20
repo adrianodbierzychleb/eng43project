@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 
 public class CheckoutStepDefs {
     // TODO: 18/11/2019  Change your driver path to your own path!
-    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\BB\\chromedriver_win32\\chromedriver.exe");
+    private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Dana Korang-Awua\\Downloads\\chromedriver_win32\\chromedriver.exe");
 
 
     private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
@@ -170,7 +170,6 @@ public class CheckoutStepDefs {
 
     @When("I press the change billing address button")
     public void iPressTheChangeBillingAddressButton() {
-
         automationPracticeSite.getCheckout().clickBillingUpdateButton();
     }
 
@@ -178,6 +177,21 @@ public class CheckoutStepDefs {
     public void iShouldBeAbleToAlterMyBillingAddress() {
         String currentUrl = seleniumConfig.getDriver().getCurrentUrl();
         Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=237923",currentUrl);
+    }
+
+    /**
+     *   Scenario Outline: As a user I want to be able to add a new address
+     */
+
+    @When("I press the add new address button")
+    public void i_press_the_add_new_address_button() {
+        automationPracticeSite.getCheckout().clickDeliveryAddAddressButton();
+    }
+
+    @Then("I should be redirected to the address form")
+    public void i_should_be_redirected_to_the_address_form() {
+        String addAddressCurrentURL = seleniumConfig.getDriver().getCurrentUrl();
+        Assert.assertEquals("http://automationpractice.com/index.php?controller=address&back=order.php%3Fstep%3D1", addAddressCurrentURL);
     }
 
 }

@@ -8,14 +8,11 @@ public class Checkout {
     private WebDriver driver;
     private String checkoutUrl = "http://automationpractice.com/index.php";
     private By addressUpdateButton = By.xpath("//*[@id=\"address_invoice\"]/li[7]/a");
-
     private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
     private By addressDropDown = By.id("id_address_delivery");
     private By dropDownHomeAddress = By.xpath("/html/body/div/div[2]/div/div[3]/div/form/div/div[1]/div[1]/div/div/select/option[2]");
-
     private By billingUpdateButton = By.xpath("/html/body/div/div[2]/div/div[3]/div/form/div/div[2]/div[2]/ul/li[7]/a/span");
 
-    private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
 
 
     public Checkout(WebDriver driver) {
@@ -44,10 +41,7 @@ public class Checkout {
 
 
     public Checkout clickDropDownMenu() {
-
         driver.findElement(addressDropDown).click();
-
-
         return this;
 
     }
@@ -56,19 +50,6 @@ public class Checkout {
         driver.findElement(dropDownHomeAddress).click();
         return this;
     }
-<<<<<<< HEAD
-=======
 
 
-    public Checkout clickBillingUpdateButton(){
-        driver.findElement(billingUpdateButton).click();
-        return this;
-    }
-
-    public Checkout clickDeliveryAddAddressButton() {
-        driver.findElement(addNewAddressButton).click();
-        return this;
-    }
-
->>>>>>> 3f5f1fc3c2b88d1c430f0495a7abe92aaf78b40e
 }

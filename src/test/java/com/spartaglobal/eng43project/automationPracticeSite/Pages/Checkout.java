@@ -15,12 +15,11 @@ public class Checkout {
 
     private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
 
-<<<<<<< HEAD
-    private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
 
-=======
+    //private By addNewAddressButton = By.xpath("//*[@id=\"center_column\"]/form/div/p/a");
+
+
     private By saveAddressChanges = By.id("submitAddress");
->>>>>>> checkout
 
     public Checkout(WebDriver driver) {
         this.driver = driver;
@@ -63,11 +62,10 @@ public class Checkout {
         return this;
     }
 
-<<<<<<< HEAD
-=======
+
     public Checkout clickSaveAddressButton(){
         driver.findElement(saveAddressChanges).click();
         return this;
     }
->>>>>>> checkout
+
 }

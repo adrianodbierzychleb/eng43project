@@ -50,7 +50,6 @@ Feature: Checkout
           Given I have added an item to the basket
           And I go to the basket via the checkout button
           And I press the proceed to checkout button in the summary
-          And I do not own an account
           When I press sign up button
           Then I will be redirected to a sign up page in order to create an account
 

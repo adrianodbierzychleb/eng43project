@@ -14,8 +14,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Signup {
 
-    public WebDriver driver;
- //   public WebDriverWait webDriverWait;
+    private WebDriver driver;
+
+//    public WebDriver driver;
+// //   public WebDriverWait webDriverWait;
+
 
     //shams variables
     private String signUpURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
@@ -235,6 +238,8 @@ public class Signup {
     public void waiting(){
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
+
+}
 
     public void closeDriver(){
         driver.close();

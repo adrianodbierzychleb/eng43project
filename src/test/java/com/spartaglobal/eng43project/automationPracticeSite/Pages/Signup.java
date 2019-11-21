@@ -20,9 +20,12 @@ public class Signup {
     //shams variables
     private String signUpURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     private By emailFieldID = By.id("email_create");
-    private By emailErrorText = By.xpath("//*[@id=\"create_account_error\"]");
+    private By emailErrorText = By.cssSelector("#create_account_error");
     private By createAccountButton = By.name("SubmitCreate");
     private String accountFormURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation";
+  //  private By formErrorText = By.xpath("//*[@id=\"center_column\"]/div");
+    private By errorMessageId = By.cssSelector("#center_column");
+
 
    //Yas's VAriables
    private By titles = By.name("id_gender");
@@ -77,10 +80,10 @@ public class Signup {
         return driver.findElement(emailErrorText).getText();
     }
 
-    public Signup goToCreateAccountPage(){
-        driver.navigate().to(accountFormURL);
-        return this;
-    }
+//    public Signup goToCreateAccountPage(){
+//        driver.navigate().to(accountFormURL);
+//        return this;
+//    }
 
 
     //*********************Personal information field methods*********************
@@ -128,7 +131,7 @@ public class Signup {
         waiting();
         WebElement year = driver.findElement(dateYear);
         Select option = new Select(year);
-        for (int i = 0; i < option.getOptions().size(); i++) {
+        for (int i = 0; i < 2; i++) {
             option.selectByIndex(i);
             option.getFirstSelectedOption().getText();
         }
@@ -235,5 +238,9 @@ public class Signup {
 
     public void closeDriver(){
         driver.close();
+    }
+
+    public String getErrorMessage(){
+        return driver.findElement(errorMessageId).getText();
     }
 }

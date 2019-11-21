@@ -1,7 +1,7 @@
 package com.spartaglobal.eng43project.ProjectTests.PageNavigationTests;
 
 import com.spartaglobal.eng43project.SeleniumConfig.SeleniumConfig;
-import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.CommonPageProperties;
+
 import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.ContactUsPage;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -1,5 +1,8 @@
-Feature: As a user I want to fill in the sign up form so that i can create an account/
+# Use cucumber test runner class to run all the scenarios together, otherwise run them separately by running each scenario
 
+Feature: As a user
+  I want to fill in the sign up form
+  So that i can create an account.
 
   Scenario: I am navigated to the page to the 'Create an Account' form when I enter a valid email
     Given that I am on the sign-up page

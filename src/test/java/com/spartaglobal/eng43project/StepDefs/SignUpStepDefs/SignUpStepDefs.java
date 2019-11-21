@@ -35,12 +35,6 @@ public class SignUpStepDefs {
         automationPracticeSite.getSignup();
     }
 
-
-    // TODO: 18/11/2019  Change your driver path to your own path!
-    private static SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
-    private static AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
-    private static Signup signup;
-
     @Before
     public static void setup() {
         signup = new Signup(seleniumConfig.getDriver());

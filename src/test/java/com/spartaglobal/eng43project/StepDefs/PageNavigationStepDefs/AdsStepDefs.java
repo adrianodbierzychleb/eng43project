@@ -32,14 +32,14 @@ public class AdsStepDefs {
         automationPracticeSite.getNavigationPages().homePage().goToHomePageURL();
     }
 
-    @When("I click an {int}Off")
-    public void i_click_an_Off(Integer int1) {
-      if(int1 == 25){
-          automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().click25Ad();
-      }
-      else {
-          automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().click45Ad();
-      }
+    @When("I click a Offfortyfive")
+    public void i_click_a_Offfortyfive() {
+       automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().click45Ad();
+    }
+
+    @When("I click a Offtwentyfive")
+    public void i_click_a_Offtwentyfive() {
+       automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().click25Ad();
     }
 
     @Then("I am navigated to the ad’s location")
@@ -47,28 +47,28 @@ public class AdsStepDefs {
         Assert.assertEquals("https://www.prestashop.com/en",seleniumConfig.getDriver().getCurrentUrl());
     }
 
-    @When("I click an Top trends")
-    public void i_click_an_Top_trends() {
+    @When("I click a Top trends ad")
+    public void i_click_a_Top_trends_ad() {
         automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().clickTopTrendsAd();
     }
 
-    @When("I click an Men's Coats")
-    public void i_click_an_Men_s_Coats() {
+    @When("I click a Men's Coats ad")
+    public void i_click_a_Men_s_Coats_ad() {
         automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().clickMenCoatsAd();
     }
 
-    @When("I click an Women's Coats")
-    public void i_click_an_Women_s_Coats() {
+    @When("I click a Women's Coats ad")
+    public void i_click_a_Women_s_Coats_ad() {
         automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().clickWomenCoatsAd();
     }
 
-    @When("I click an Sunglasses")
-    public void i_click_an_Sunglasses() {
+    @When("I click a Sunglasses ad")
+    public void i_click_a_Sunglasses_ad() {
        automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().clickSunglassesAd();
     }
 
-    @When("I click an Handbags")
-    public void i_click_an_Handbags() {
+    @When("I click a Handbags ad")
+    public void i_click_an_Handbags_ad() {
        automationPracticeSite.getNavigationPages().homePage().goToHomePageURL().clickHandbagsAd();
     }
 }

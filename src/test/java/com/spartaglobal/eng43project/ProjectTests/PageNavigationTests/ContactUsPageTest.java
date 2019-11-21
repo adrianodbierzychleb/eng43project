@@ -11,6 +11,7 @@ public class ContactUsPageTest {
 
     @BeforeClass
     public static void setup() {
+        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\IYotova\\Downloads\\chromedriver_win32\\chromedriver.exe");
         contactUsPage = new ContactUsPage(seleniumConfig.getDriver());
     }
 //    @AfterClass

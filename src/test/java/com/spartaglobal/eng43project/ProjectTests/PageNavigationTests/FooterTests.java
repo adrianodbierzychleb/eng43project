@@ -2,7 +2,6 @@ package com.spartaglobal.eng43project.ProjectTests.PageNavigationTests;
 
 import com.spartaglobal.eng43project.SeleniumConfig.SeleniumConfig;
 import com.spartaglobal.eng43project.automationPracticeSite.AutomationPracticeSite;
-import com.spartaglobal.eng43project.automationPracticeSite.Pages.Navigation.CommonPageProperties;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -11,14 +10,12 @@ import org.junit.Test;
 public class FooterTests {
     private static SeleniumConfig seleniumConfig;
     private static AutomationPracticeSite automationPracticeSite;
-    private static CommonPageProperties commonPageProperties;
 
     @BeforeClass
     public static void setup(){
         // TODO: 18/11/2019 Change the driverPath to your own path!
-        seleniumConfig = new SeleniumConfig("chrome","T:\\Kieran Cornish\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\IYotova\\Downloads\\chromedriver_win32\\chromedriver.exe");
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
-        commonPageProperties = new CommonPageProperties(seleniumConfig.getDriver());
     }
     @AfterClass
     public static void teardown(){

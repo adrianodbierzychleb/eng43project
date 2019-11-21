@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin={"pretty"},
-       // tags = {"@ads"},
+        tags = {"@ads"},
         features = "classpath:features/pageNavigationFeatures/ads.feature",
         glue = "com.spartaglobal.eng43project.StepDefs.PageNavigationStepDefs.AdsStepDefs"
 )

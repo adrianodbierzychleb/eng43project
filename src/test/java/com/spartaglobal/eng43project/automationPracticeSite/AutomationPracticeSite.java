@@ -42,9 +42,8 @@ public class AutomationPracticeSite {
         return signup;
     }
 
-    public MyAccount getMyAccount(){
+    public MyAccount getMyAccount() {
         return myAccount;
     }
-
 
 }

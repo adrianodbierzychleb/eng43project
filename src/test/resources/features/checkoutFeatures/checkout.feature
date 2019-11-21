@@ -62,13 +62,20 @@ Feature: Checkout
             When I press the button to change address
             Then I should be able to select a new address
 
-
             @Outline
             Scenario: As a user I want to be able to change my billing address
               Given I have items in my basket
               And I want to proceed to pay
               When I press the change billing address button
               Then My delivery address should update
+
+            @Outline
+            Scenario: As a user I want to be able to add a new address
+              Given I have items in my basket
+              And I want to proceed to pay
+              When I press the add new address button
+              And  I should be redirected to the address form
+              Then I should add a new address
 
 
 
@@ -95,3 +102,17 @@ Feature: Checkout
                   Given I have proceeded to the shipping tab
                   When I click the terms and conditions box
                   Then I should be taken to the payment page
+
+              @Outline
+              Scenario: As I user I want the option to pay by bank wire
+                Given I click the pay by bank wire option
+                Then I should be taken to the order summary page where it will confirm that I have paid by bank wire
+                And I click the confirm button
+
+
+              @Outline
+              Scenario: As I user I want the option to pay by cheque
+                Given I click the pay by cheque option
+                Then I should be taken to the order summary page where it will confirm that I have paid by cheque
+                And I click the confirm button
+

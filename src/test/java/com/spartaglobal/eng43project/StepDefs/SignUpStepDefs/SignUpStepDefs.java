@@ -18,8 +18,10 @@ public class SignUpStepDefs {
     public static void setup() {
         signup = new Signup(seleniumConfig.getDriver());
         automationPracticeSite.getSignup().goToSignUpURL();
-    }
 
+        // private SeleniumConfig seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Shmaila Rehman\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        //  private AutomationPracticeSite automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());}
+    }
 
     @Given("that I am on the create account page")
     public void that_I_am_on_the_create_account_page() {

@@ -56,11 +56,4 @@ public class SignUpTest {
         site.getSignup().goToSignUpURL().inputEmail("jdjfi@gmail.com").clickCreateAccountButton();
     }
 
-
-
-    private static Signup signup;
-
-
-
-
 }

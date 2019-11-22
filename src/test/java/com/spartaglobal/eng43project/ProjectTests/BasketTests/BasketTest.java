@@ -24,15 +24,9 @@ public class BasketTest {
     public static void setup() {
         // TODO: 18/11/2019 Change the driverPath to your own path!
         seleniumConfig = new SeleniumConfig("chrome","C:\\Users\\Anis Subba\\OneDrive - Sparta Global Limited\\Engineering43\\chromedriver_win32\\chromedriver.exe");
-
         automationPracticeSite = new AutomationPracticeSite(seleniumConfig.getDriver());
         navigationPages = new NavigationPages(seleniumConfig.getDriver());
     }
-
-    /*@AfterClass
-    public static void teardown(){
-        seleniumConfig.getDriver().close();
-    }*/
 
     
     @Test
@@ -78,7 +72,7 @@ public class BasketTest {
 
     @Test
     public void removeProductsFromCart() {
-        automationPracticeSite.getBasket().goToWomanPage().removeProductFromCartDropDownMenu();
+        automationPracticeSite.getBasket().goToWomanPage().goToCartDropDownMenu().removeProductFromCartDropDownMenu();
     }
 
     @Test

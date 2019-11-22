@@ -15,6 +15,9 @@ public class Basket {
     private WebDriver driver;
     private NavigationPages navigationPages;
 
+    public String cartTotal;
+    public String totalSummaryProducts;
+    public String totalCartProducts;
     public String totalWithoutTaxString;
     public String grandTotalString;
     private String dressesPageURL = "http://automationpractice.com/index.php?id_category=8&controller=category";
@@ -80,7 +83,7 @@ public class Basket {
     }
 
     public Basket goToProceedToCheckout() {
-        SelectItemAndAddToCart().waitForElement();
+        /*SelectItemAndAddToCart().*/waitForElement();
         driver.findElement(By.linkText("Proceed to checkout")).click();
         return this;
     }
@@ -94,9 +97,15 @@ public class Basket {
         driver.findElement(By.name("quantity_3_13_0_0")).sendKeys(Keys.ENTER);
         return this;
     }
-    public Basket addItemToBasket() {
+
+    public Basket addItemFromHomeToBasket(){
         goToHomePageURL();
         driver.findElement(printedDressQuickBuy).click();
+        return this;
+    }
+
+    public Basket addItemToBasket() {
+        driver.findElement(addProduct3ID).click();
         return this;
     }
     public Basket proceedToSummary() {
@@ -151,7 +160,7 @@ public class Basket {
     }
 
     public Basket goToCartDropDownMenu(){
-        addItemToBasket().waitForElement().clickShoppingButton().waitForElement();
+        addItemFromHomeToBasket().waitForElement().clickShoppingButton().waitForElement();
         Actions hold = new Actions(driver);
         WebElement cart;
         cart = driver.findElement(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a"));
@@ -160,10 +169,29 @@ public class Basket {
     }
 
     public Basket removeProductFromCartDropDownMenu(){
-        goToCartDropDownMenu().waitForElement();
+        waitForElement();
         driver.findElement(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > div > div > div > dl > dt:nth-child(1) > span > a")).click();
         return this;
     }
 
+    public Basket viewSummaryProductTotal(){
+        totalSummaryProducts = driver.findElement(By.id("summary_products_quantity")).getText();
+        return this;
+    }
+
+    public Basket viewCartProductsTotal(){
+        totalCartProducts = driver.findElement(By.className("ajax_cart_quantity")).getText() + " " + "Products";
+        return this;
+    }
+
+    public Basket viewCartTotal(){
+        cartTotal = driver.findElement(By.className("ajax_cart_total")).getText();
+        return this;
+    }
+
+    public Basket closeDriver(){
+        driver.close();
+        return this;
+    }
 }
 
